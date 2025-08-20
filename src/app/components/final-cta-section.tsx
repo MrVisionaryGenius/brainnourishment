@@ -1,28 +1,26 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import type React from "react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface FinalCtaSectionProps {
-  onBuyClick: () => void
+  onBuyClick: () => void;
 }
 
 const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
   // Section ref can be generic HTMLElement
   const { ref: sectionRef, isVisible: sectionVisible } =
-    useScrollAnimation<HTMLElement>(0.1)
+    useScrollAnimation<HTMLElement>(0.1);
 
   // Button ref is specifically HTMLButtonElement
   const { ref: buttonRef, isVisible: buttonVisible } =
-    useScrollAnimation<HTMLButtonElement>(0.3)
+    useScrollAnimation<HTMLButtonElement>(0.3);
 
   return (
     <section
       ref={sectionRef}
       className={`py-20 bg-gradient-to-br from-red-900 via-gray-900 to-black text-center transition-all duration-700 ease-out ${
-        sectionVisible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-8"
+        sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -43,8 +41,8 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
           }`}
         >
           Every second you wait, your addiction gets stronger. Every scroll
-          steals your future. Every notification is a nail in the coffin of
-          your dreams.
+          steals your future. Every notification is a nail in the coffin of your
+          dreams.
           <br />
           <br />
           <span className="text-red-400 font-bold">
@@ -63,7 +61,7 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
             <div className="text-red-400 font-bold mb-2">⚠️ WARNING</div>
             <div className="text-sm text-gray-300">
               This offer expires when we hit 3,000 participants. Current count:
-              2,847
+              30
             </div>
             <div className="w-full bg-gray-700 rounded-full h-2 mt-3">
               <div
@@ -87,7 +85,7 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
         </button>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FinalCtaSection
+export default FinalCtaSection;
