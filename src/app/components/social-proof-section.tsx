@@ -37,8 +37,8 @@ const SocialProofSection = () => {
           <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-red-500/30 transition-colors duration-300">
             <div className="text-4xl mb-2">⭐⭐⭐⭐⭐</div>
             <p className="text-gray-300 mb-4">
-              "I got my life back. Lost 40lbs, started my business, found love.
-              This challenge saved my future."
+              &quot;I got my life back. Lost 40lbs, started my business, found love.
+              This challenge saved my future.&quot;
             </p>
             <div className="text-red-400 font-bold mt-2 font-serif">
               - Mohsin, 22 (Software Engineer)
@@ -47,8 +47,8 @@ const SocialProofSection = () => {
           <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-red-500/30 transition-colors duration-300">
             <div className="text-4xl mb-2">🔥</div>
             <p className="text-gray-300 mb-4">
-              "From 8 hours daily to 30 minutes. I read 12 books, learned
-              coding, and got promoted. Worth every penny."
+              &quot;From 8 hours daily to 30 minutes. I read 12 books, learned
+              coding, and got promoted. Worth every penny.&quot;
             </p>
             <div className="text-red-400 font-bold mt-2 font-serif">
               - Rehan, 22 (AI Engineer)
@@ -57,8 +57,8 @@ const SocialProofSection = () => {
           <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-red-500/30 transition-colors duration-300">
             <div className="text-4xl mb-2">💎</div>
             <p className="text-gray-300 mb-4">
-              "The bonus on Day 14 alone generated $50k in revenue for my side
-              hustle. This is life-changing."
+              &quot;The bonus on Day 14 alone generated $50k in revenue for my side
+              hustle. This is life-changing.&quot;
             </p>
             <div className="text-red-400 font-bold mt-2 font-serif">
               - Jennifer L., 32

@@ -18,7 +18,7 @@ const MessageModal: React.FC<MessageModalProps> = ({ message, onClose }) => {
                     onClick={onClose}
                     className="bg-white text-red-600 font-bold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-lg font-serif"
                 >
-                    Let's Go! 🚀
+                    Let&apos;s Go! 🚀
                 </button>
             </div>
         </div>

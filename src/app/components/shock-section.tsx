@@ -41,7 +41,7 @@ const ShockSection = () => {
               your phone.
             </p>
             <p className="text-xl text-gray-300 mb-6">
-              That's not normal. That's not human. That's addiction programming
+              That&apos;s not normal. That&apos;s not human. That&apos;s addiction programming
               designed by billion-dollar tech companies to harvest your
               attention and sell it to the highest bidder.
             </p>

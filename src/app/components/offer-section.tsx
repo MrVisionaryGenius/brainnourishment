@@ -36,8 +36,8 @@ const OfferSection: React.FC<OfferSectionProps> = ({ onBuyClick }) => {
             THE PHONE FREEDOM BLUEPRINT
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            A scientifically-designed 14-day system that doesn't just reduce
-            screen time, it completely rewires your brain's relationship with
+            A scientifically-designed 14-day system that doesn&apos;t just reduce
+            screen time, it completely rewires your brain&apos;s relationship with
             technology.
           </p>
         </div>
@@ -125,7 +125,7 @@ const OfferSection: React.FC<OfferSectionProps> = ({ onBuyClick }) => {
                 </h3>
               </div>
               <p className="text-gray-300">
-                The "4-Hour Transformation Protocol" - Turn your reclaimed time
+                The &quout;4-Hour Transformation Protocol&quot; - Turn your reclaimed time
                 into a life-changing success foundation. This alone is worth
                 $500+.
               </p>

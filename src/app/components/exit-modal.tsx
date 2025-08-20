@@ -21,8 +21,8 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
                 </p>
                 <div className="bg-gray-800 p-6 rounded-2xl mb-6">
                     <p className="text-lg text-gray-200">
-                        Choose the **blue pill**, and a year from now, you'll still be endlessly scrolling, watching others achieve
-                        their dreams, and wondering why you feel so lost. You're not depressed; you're just trapped in a loop.
+                        Choose the **blue pill**, and a year from now, you&apos;ll still be endlessly scrolling, watching others achieve
+                        their dreams, and wondering why you feel so lost. You&apos;re not depressed; you&apos;re just trapped in a loop.
                     </p>
                     <p className="text-lg text-red-400 mt-4">
                         Choose the **red pill**, and you will face your addiction head-on and claim your life back.
@@ -42,7 +42,7 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
                         onClick={onClose}
                         className="w-full bg-gray-700 hover:bg-gray-800 text-gray-300 font-bold text-lg py-4 rounded-full transition-all duration-300 hover:scale-105"
                     >
-                        No, I'll Keep Scrolling
+                        No, I&apos;ll Keep Scrolling
                     </button>
                 </div>
             </div>

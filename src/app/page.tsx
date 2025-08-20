@@ -15,10 +15,10 @@ import Footer from "./components/footer"
 
 const App = () => {
   const [timeWasted, setTimeWasted] = useState(0)
-  const [age, setAge] = useState(22)
+  const [age] = useState(22)
   const [isExitModalOpen, setIsExitModalOpen] = useState(false)
   const [message, setMessage] = useState("")
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen] = useState(false)
 
   // Set your Gumroad or Whop product URL here
   const GUMROAD_WHOP_URL = "https://your-product-link.com"

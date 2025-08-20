@@ -51,7 +51,7 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
               : "opacity-0 translate-y-4"
           }`}
         >
-          Walk away now, and one year from today, you'll be right back here.
+          Walk away now, and one year from today, you&apos;ll be right back here.
         </p>
         <div
           ref={cardsRef}
@@ -62,7 +62,7 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
           }`}
         >
           <div className="bg-gray-900/50 p-8 rounded-3xl shadow-xl border-t-4 border-red-500">
-            <h3 className="text-xl font-bold mb-4 font-serif">The Scroller's Path</h3>
+            <h3 className="text-xl font-bold mb-4 font-serif">The Scroller&apos;s Path</h3>
             <ul className="text-left text-gray-400 space-y-3">
               <li className="flex items-start">
                 <X className="text-red-500 w-6 h-6 mr-2 flex-shrink-0" />
@@ -78,14 +78,14 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
               <li className="flex items-start">
                 <X className="text-red-500 w-6 h-6 mr-2 flex-shrink-0" />
                 <p>
-                  Watching others achieve their dreams while you're standing still.
+                  Watching others achieve their dreams while you&apos;re standing still.
                 </p>
               </li>
             </ul>
           </div>
           <div className="bg-gray-900/50 p-8 rounded-3xl shadow-xl border-t-4 border-green-500">
             <h3 className="text-xl font-bold mb-4 font-serif">
-              The Freedom Fighter's Path
+              The Freedom Fighter&apos;s Path
             </h3>
             <ul className="text-left text-gray-400 space-y-3">
               <li className="flex items-start">
@@ -115,7 +115,7 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
               : "opacity-0 translate-y-4"
           }`}
         >
-          You're not depressed. You're just endlessly scrolling.
+          You&apos;re not depressed. You&apos;re just endlessly scrolling.
         </p>
         <button
           ref={buttonRef}
@@ -126,7 +126,7 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
               : "opacity-0 translate-y-4 scale-90"
           }`}
         >
-          I CHOOSE THE FREEDOM FIGHTER'S PATH
+          I CHOOSE THE FREEDOM FIGHTER&apos;S PATH
         </button>
       </div>
     </section>
