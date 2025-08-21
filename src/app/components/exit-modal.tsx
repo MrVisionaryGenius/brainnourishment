@@ -16,8 +16,8 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
       <div className="bg-[#1a1f1b] p-8 rounded-3xl shadow-2xl max-w-lg w-full relative border border-[#ca6e3f]/50">
         <h3 className="text-2xl font-black text-[#ca6e3f] mb-4 font-serif">ARE YOU LEAVING?</h3>
         <p className="text-xl font-bold text-[#f1eada] mb-6">
-          This is your <span className="text-[#ca6e3f]">red pill</span> or{" "}
-          <span className="text-blue-400">blue pill</span> solution.
+          This is your moment of choice: lose more years to scrolling,<span className="text-[#ca6e3f]">or break free and</span> or{" "}
+          <span className="text-blue-400">start your new journey.</span> solution.
         </p>
         <div className="bg-[#f1eada]/10 p-6 rounded-2xl mb-6">
           <p className="text-lg text-[#f0e9d9]">
