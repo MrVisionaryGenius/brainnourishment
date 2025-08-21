@@ -86,7 +86,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ timeWasted, age, stats, onBuy
               className="bg-[#ca6e3f] hover:bg-[#ca6d41] text-white font-black text-xl py-6 px-12 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 flex items-center space-x-3 font-serif"
             >
               <Zap className="w-6 h-6" />
-              <span>ESCAPE THE MATRIX ($14)</span>
+              <span>BREAK THE ADDICTION ($14)</span>
             </button>
 
             <div className="text-center">
