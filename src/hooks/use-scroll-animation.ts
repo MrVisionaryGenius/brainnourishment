@@ -1,30 +1,32 @@
 "use client"
 
-import { useRef, useState, useEffect, RefObject } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function useScrollAnimation<T extends HTMLElement>(threshold = 0.1) {
-  const ref = useRef<T | null>(null)
+  const ref = useRef<T>(null)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    const currentRef = ref.current // Copy ref.current to a variable
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
-          observer.disconnect()
         }
       },
-      { threshold }
+      { threshold },
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
+    if (currentRef) {
+      observer.observe(currentRef)
     }
 
     return () => {
-      observer.disconnect()
+      if (currentRef) {
+        observer.unobserve(currentRef)
+      }
     }
   }, [threshold])
 
-  return { ref, isVisible } as { ref: RefObject<T>, isVisible: boolean }
+  return { ref, isVisible }
 }

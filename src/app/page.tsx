@@ -11,7 +11,7 @@ import ExitModal from "./components/exit-modal"
 import LastChanceSection from "./components/last-chance-section"
 import MessageModal from "./components/message-modal"
 import Footer from "./components/footer"
-
+import { Navbar } from "./components/navbar"
 
 const App = () => {
   const [timeWasted, setTimeWasted] = useState(0)
@@ -57,7 +57,9 @@ const App = () => {
   const stats = calculateLifeLost(3)
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-[#f0e9d9] text-[#1b201c] font-sans overflow-x-hidden">
+      <Navbar />
+      
       <FloatingActionButton onBuyClick={handleBuyClick} />
 
       <HeroSection timeWasted={timeWasted} age={age} stats={stats} onBuyClick={handleBuyClick} />
