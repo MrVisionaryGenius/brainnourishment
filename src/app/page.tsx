@@ -11,7 +11,7 @@ import LastChanceSection from "./components/last-chance-section"
 import Footer from "./components/footer"
 import { Navbar } from "./components/navbar"
 import AgeInputModal from "./components/age-input"
-import ExitModal from "./components/message-modal"
+import ExitModal from "./components/exit-modal"
 
 const App = () => {
   const [timeWasted, setTimeWasted] = useState(0)
@@ -139,7 +139,7 @@ const App = () => {
 
       {/* Exit Modal - Only shows after age is set */}
       {age !== null && (
-        <ExitModal 
+        <ExitModal
           isOpen={isExitModalOpen} 
           onClose={() => setIsExitModalOpen(false)} 
           onBuyClick={handleBuyClick} 
