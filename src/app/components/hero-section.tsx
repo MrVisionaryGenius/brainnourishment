@@ -80,8 +80,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ timeWasted, age, stats, onBuy
               onClick={onBuyClick}
               className="group bg-[#ca6e3f] hover:bg-[#ca6d41] text-white font-semibold text-lg py-4 px-8 rounded-full shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3"
             >
+<<<<<<< HEAD
               <span>Start the 14-Day Reset — Just $14</span>
               <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+=======
+              <Zap className="w-6 h-6" />
+              <span>BREAK THE ADDICTION ($14)</span>
+>>>>>>> a7b42b9e31c8b52b03080761fe61e3c8daf3a03a
             </button>
 
             <div className="text-center">
