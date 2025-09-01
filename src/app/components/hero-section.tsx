@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { Clock, ChevronRight, Zap } from "lucide-react"
+import { Clock, ChevronRight } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface HeroSectionProps {
@@ -69,7 +69,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ timeWasted, age, stats, onBuy
             className={`text-lg text-[#1b201c]/70 mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-700 ease-out delay-400 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
               }`}
           >
-            You're <span className="text-[#ca6e3f] font-semibold">{age} years old.</span> You spend <span className="text-[#ca6e3f] font-semibold">{stats.minutesPerDay} minutes daily</span> scrolling—that's <span className="text-[#ca6e3f] font-semibold">{stats.percentageWasted}% of your waking life</span> and {stats.daysAlreadyLost > 0 ? `you've already lost ${stats.daysAlreadyLost} days. ` : ''}enough time to read <span className="text-[#ca6e3f] font-semibold">{stats.booksPerYear} books</span> or complete <span className="text-[#ca6e3f] font-semibold">{stats.workoutsPerYear} workouts</span> every year.
+            You&apos;re <span className="text-[#ca6e3f] font-semibold">{age} years old.</span> You spend <span className="text-[#ca6e3f] font-semibold">{stats.minutesPerDay} minutes daily</span> scrolling—that&apos;s <span className="text-[#ca6e3f] font-semibold">{stats.percentageWasted}% of your waking life</span> and {stats.daysAlreadyLost > 0 ? `you've already lost ${stats.daysAlreadyLost} days. ` : ''}enough time to read <span className="text-[#ca6e3f] font-semibold">{stats.booksPerYear} books</span> or complete <span className="text-[#ca6e3f] font-semibold">{stats.workoutsPerYear} workouts</span> every year.
           </p>
 
           <div

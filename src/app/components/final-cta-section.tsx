@@ -35,7 +35,7 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
             className={`text-xl md:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed transform transition-all duration-1200 ease-out delay-500 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
           >
-            One year from now, you'll either still be stuck in the scroll… or finally living the life you've been putting off.
+            One year from now, you&apos;ll either still be stuck in the scroll… or finally living the life you&apos;ve been putting off.
           </p>
 
           {/* Urgency indicator */}
@@ -51,7 +51,7 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
                 <span className="text-white font-semibold text-sm uppercase tracking-wider">Act Now</span>
               </div>
               <p className="text-lg text-white/90 font-medium mb-4">
-                We're opening spots for our first 3,000 members at the launch price of{" "}
+                We&apos;re opening spots for our first 3,000 members at the launch price of{" "}
                 <span className="font-bold text-2xl">$14</span>{" "}
                 <span className="text-white/60 line-through text-base">(normally $49)</span>
               </p>

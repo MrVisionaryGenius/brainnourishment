@@ -53,7 +53,7 @@ const AgeInputModal: React.FC<AgeInputModalProps> = ({ isOpen, onAgeSubmit }) =>
                             Quick Question...
                         </h3>
                         <p className="text-sm text-[#f1eada]/80 leading-relaxed">
-                            To show you exactly how much time you could be wasting, what's your age?
+                            To show you exactly how much time you could be wasting, what&apos;s your age?
                         </p>
                     </div>
 

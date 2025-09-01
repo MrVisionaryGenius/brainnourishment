@@ -26,7 +26,7 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
               Before you go, ask yourself this…
             </h3>
             <p className="text-lg md:text-xl text-[#f1eada]/90 leading-relaxed max-w-lg mx-auto">
-              One year from now, do you want to be in the exact same place you are today — or finally free from the scroll trap?
+              One year from now, do you want to be in the exact same place you are today - or finally free from the scroll trap?
             </p>
           </div>
 
@@ -38,7 +38,7 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
                   If you walk away now…
                 </h4>
                 <p className="text-[#f1eada]/90 leading-relaxed pl-5">
-                  You'll keep losing hours every day, watching others move forward while you stand still.
+                  You&apos;ll keep losing hours every day, watching others move forward while you stand still.
                 </p>
               </div>
               
@@ -48,7 +48,7 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
                   If you take action today…
                 </h4>
                 <p className="text-[#f1eada]/90 leading-relaxed pl-5">
-                  You'll reclaim your time, your focus, and your future.
+                  You&apos;ll reclaim your time, your focus, and your future.
                 </p>
               </div>
             </div>
@@ -64,7 +64,7 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
               className="group w-full bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] hover:from-[#ca6d41] hover:to-[#ca6e3f] text-white font-bold text-lg md:text-xl py-5 rounded-2xl transition-all duration-700 hover:scale-[1.02] hover:shadow-xl hover:-translate-y-0.5 font-serif relative overflow-hidden"
             >
               <span className="relative z-10 flex items-center justify-center">
-                Yes, I'm Taking Back My Life
+                Yes, I&apos;m Taking Back My Life
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </button>
@@ -73,7 +73,7 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
               onClick={onClose}
               className="w-full bg-[#f1eada]/10 hover:bg-[#f1eada]/20 text-[#f1eada]/80 hover:text-[#f1eada] font-medium text-lg py-4 rounded-2xl transition-all duration-500 hover:scale-[1.01] border border-[#f1eada]/20"
             >
-              Not Today — I'll Stay Stuck
+              Not Today - I&apos;ll Stay Stuck
             </button>
           </div>
 

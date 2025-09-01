@@ -37,7 +37,7 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
               sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             }`}
           >
-            You don't have to keep losing hours every day to a device designed to keep you hooked. In just 14 days, 
+            You don&apos;t have to keep losing hours every day to a device designed to keep you hooked. In just 14 days,
             you can reset your habits, reclaim your time, and feel in control again.
           </p>
         </div>
@@ -54,10 +54,10 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
               <span className="text-[#ca6e3f] font-semibold text-sm uppercase tracking-wider">Limited Launch Offer</span>
             </div>
             <p className="text-lg text-[#f1eada] font-medium leading-relaxed">
-              We're opening spots for our first 3,000 members at the launch price of{" "}
+              We&apos;re opening spots for our first 3,000 members at the launch price of{" "}
               <span className="text-[#ca6e3f] font-bold">$14</span>{" "}
               <span className="text-[#f1eada]/70 line-through">(normally $49)</span>. 
-              Once they're gone, the offer closes.
+              Once they&apos;re gone, the offer closes.
             </p>
             <div className="mt-6 text-center">
               <span className="text-2xl font-bold text-[#ca6e3f]">530 spots left</span>
@@ -75,7 +75,7 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
           <div className="group">
             <div className="bg-gradient-to-br from-red-900/20 to-red-800/10 backdrop-blur-sm p-8 rounded-2xl border border-red-500/30 shadow-xl transition-all duration-700 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-red-400 font-serif mb-2">The Scroller's Path</h3>
+                <h3 className="text-2xl font-bold text-red-400 font-serif mb-2">The Scroller&apos;s Path</h3>
                 <p className="text-red-300/80 text-sm">One year from now...</p>
               </div>
               <ul className="space-y-4">
@@ -125,7 +125,7 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
           }`}
         >
           <p className="text-xl md:text-2xl text-[#f1eada] font-medium italic max-w-2xl mx-auto leading-relaxed">
-            The scroll trap isn't your destiny — unless you choose it.
+            The scroll trap isn&apos;t your destiny — unless you choose it.
           </p>
         </div>
 

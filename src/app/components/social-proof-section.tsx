@@ -36,7 +36,7 @@ const SocialProofSection = () => {
               <div className="flex text-2xl">⭐⭐⭐⭐⭐</div>
             </div>
             <blockquote className="text-[#f1eada] mb-6 text-lg leading-relaxed italic">
-              "I went from 6 hours a day on social media to under 2 hours. Now I actually have time to study and exercise again."
+              &quot;I went from 6 hours a day on social media to under 2 hours. Now I actually have time to study and exercise again.&quot;
             </blockquote>
             <cite className="text-[#ca6e3f] font-semibold not-italic">
               – Mohsin, 22 (Software Engineer)
@@ -48,7 +48,7 @@ const SocialProofSection = () => {
               <div className="flex text-2xl">⭐⭐⭐⭐⭐</div>
             </div>
             <blockquote className="text-[#f1eada] mb-6 text-lg leading-relaxed italic">
-              "I cut my daily screen time by 70%. In the past month I read 3 books and finally finished a side project I'd been putting off for years."
+              &quot;I cut my daily screen time by 70%. In the past month I read 3 books and finally finished a side project I&apos;d been putting off for years.&quot;
             </blockquote>
             <cite className="text-[#ca6e3f] font-semibold not-italic">
               – Rehan, 28 (AI Engineer)
@@ -60,7 +60,7 @@ const SocialProofSection = () => {
               <div className="flex text-2xl">⭐⭐⭐⭐⭐</div>
             </div>
             <blockquote className="text-[#f1eada] mb-6 text-lg leading-relaxed italic">
-              "The daily reset helped me break habits I thought were permanent. I'm sleeping better, and my evenings finally feel free again."
+              &quot;The daily reset helped me break habits I thought were permanent. I&apos;m sleeping better, and my evenings finally feel free again.&quot;
             </blockquote>
             <cite className="text-[#ca6e3f] font-semibold not-italic">
               – Jennifer, 32 (Designer)
@@ -74,7 +74,7 @@ const SocialProofSection = () => {
         >
           <div className="inline-flex items-center bg-[#ca6e3f]/20 backdrop-blur-sm border border-[#ca6e3f]/30 rounded-full px-6 py-3">
             <div className="w-3 h-3 bg-[#ca6e3f] rounded-full animate-pulse mr-3"></div>
-            <span className="text-[#f1eada] text-sm font-medium">Join 1,200+ people who've already started their reset</span>
+            <span className="text-[#f1eada] text-sm font-medium">Join 1,200+ people who&apos;ve already started their reset</span>
           </div>
         </div>
       </div>

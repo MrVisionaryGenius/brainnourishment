@@ -12,20 +12,18 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
   if (!isOpen) return null
 
   return (
-<<<<<<< HEAD
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className={`bg-[#1a1f1b] p-6 rounded-2xl shadow-xl max-w-md w-full mx-4 relative border border-[#ca6e3f]/20 transform transition-all duration-500 ease-out ${
-        isOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
-      }`}>
-        
+      <div className={`bg-[#1a1f1b] p-6 rounded-2xl shadow-xl max-w-md w-full mx-4 relative border border-[#ca6e3f]/20 transform transition-all duration-500 ease-out ${isOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
+        }`}>
+
         {/* Clean minimal background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#ca6e3f]/3 to-transparent rounded-2xl"></div>
-        
+
         <div className="relative z-10">
           {/* Header */}
           <div className="text-center mb-6">
             <h3 className="text-xl font-bold text-[#ca6e3f] mb-3 font-serif">
-              WAIT — BEFORE YOU GO
+              WAIT - BEFORE YOU GO
             </h3>
             <p className="text-base text-[#f1eada] leading-relaxed">
               One year from now, do you want to be{" "}
@@ -37,7 +35,7 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
           {/* Content box */}
           <div className="bg-[#f1eada]/5 p-5 rounded-xl mb-6 border border-[#f1eada]/10 space-y-3">
             <p className="text-sm text-[#f0e9d9] leading-relaxed">
-              If you walk away now, nothing changes. You'll keep losing hours every day, watching others move forward while you feel stuck.
+              If you walk away now, nothing changes. You&apos;ll keep losing hours every day, watching others move forward while you feel stuck.
             </p>
             <p className="text-sm text-[#ca6e3f] font-medium leading-relaxed">
               But if you take action today, you reclaim your focus, your time, and your future.
@@ -53,14 +51,14 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
               }}
               className="w-full bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] hover:from-[#ca6d41] hover:to-[#ca6e3f] text-white font-bold text-base py-3 px-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] font-serif"
             >
-              YES — I'M TAKING BACK MY LIFE
+              YES - I&apos;M TAKING BACK MY LIFE
             </button>
-            
+
             <button
               onClick={onClose}
               className="w-full bg-[#f1eada]/10 hover:bg-[#f1eada]/20 text-[#f1eada]/70 hover:text-[#f1eada] font-medium text-sm py-2.5 rounded-xl transition-all duration-300 border border-[#f1eada]/20"
             >
-              Not Today — I'll Stay Stuck
+              Not Today - I&apos;ll Stay Stuck
             </button>
           </div>
 
@@ -70,41 +68,6 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
               Join 2,470+ others • 14-day guarantee
             </p>
           </div>
-=======
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black bg-opacity-90 backdrop-blur-md">
-      <div className="bg-[#1a1f1b] p-8 rounded-3xl shadow-2xl max-w-lg w-full relative border border-[#ca6e3f]/50">
-        <h3 className="text-2xl font-black text-[#ca6e3f] mb-4 font-serif">ARE YOU LEAVING?</h3>
-        <p className="text-xl font-bold text-[#f1eada] mb-6">
-          This is your moment of choice: lose more years to scrolling,<span className="text-[#ca6e3f]">or break free and</span> or{" "}
-          <span className="text-blue-400">start your new journey.</span> solution.
-        </p>
-        <div className="bg-[#f1eada]/10 p-6 rounded-2xl mb-6">
-          <p className="text-lg text-[#f0e9d9]">
-            Choose the **blue pill**, and a year from now, you&apos;ll still be endlessly scrolling, watching others
-            achieve their dreams, and wondering why you feel so lost. You&apos;re not depressed; you&apos;re just
-            trapped in a loop.
-          </p>
-          <p className="text-lg text-[#ca6e3f] mt-4">
-            Choose the **red pill**, and you will face your addiction head-on and claim your life back.
-          </p>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button
-            onClick={() => {
-              onClose()
-              onBuyClick()
-            }}
-            className="w-full bg-[#ca6e3f] hover:bg-[#ca6d41] text-white font-black text-lg py-4 rounded-full transition-all duration-300 hover:scale-105 font-serif"
-          >
-            I CHOOSE THE RED PILL
-          </button>
-          <button
-            onClick={onClose}
-            className="w-full bg-[#f1eada]/20 hover:bg-[#f1eada]/30 text-[#f1eada] font-bold text-lg py-4 rounded-full transition-all duration-300 hover:scale-105"
-          >
-            No, I&apos;ll Keep Scrolling
-          </button>
->>>>>>> a7b42b9e31c8b52b03080761fe61e3c8daf3a03a
         </div>
       </div>
     </div>

@@ -127,7 +127,7 @@ const OfferSection: React.FC<OfferSectionProps> = ({ onBuyClick }) => {
                 <div className="text-lg text-[#1b201c]/60 line-through mb-2">Normally $49</div>
                 <div className="text-5xl md:text-6xl font-bold text-[#ca6e3f] mb-2">$14</div>
                 <div className="text-sm text-[#1b201c]/70">
-                  We're launching to our early adopters at a fraction of the price.
+                  We&apos;re launching to our early adopters at a fraction of the price.
                 </div>
               </div>
 
@@ -137,7 +137,7 @@ const OfferSection: React.FC<OfferSectionProps> = ({ onBuyClick }) => {
                   <h3 className="text-lg font-semibold text-[#1b201c]">14-Day Guarantee</h3>
                 </div>
                 <p className="text-sm text-[#1b201c]/70 leading-relaxed">
-                  Try it for 14 days. If you don't feel more in control of your time, we'll refund every cent.
+                  Try it for 14 days. If you don&apos;t feel more in control of your time, we&apos;ll refund every cent.
                 </p>
               </div>
 
