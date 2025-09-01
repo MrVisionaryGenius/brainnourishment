@@ -7,11 +7,11 @@ import ShockSection from "./components/shock-section"
 import OfferSection from "./components/offer-section"
 import SocialProofSection from "./components/social-proof-section"
 import FinalCtaSection from "./components/final-cta-section"
-import ExitModal from "./components/exit-modal"
 import LastChanceSection from "./components/last-chance-section"
 import Footer from "./components/footer"
 import { Navbar } from "./components/navbar"
 import AgeInputModal from "./components/age-input"
+import ExitModal from "./components/message-modal"
 
 const App = () => {
   const [timeWasted, setTimeWasted] = useState(0)
