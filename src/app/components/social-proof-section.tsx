@@ -9,46 +9,72 @@ const SocialProofSection = () => {
   return (
     <section
       ref={sectionRef}
-      className={`py-16 bg-[#1a1f1b] transition-all duration-700 ease-out ${
-        sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      className={`py-20 bg-[#1a1f1b] transition-all duration-700 ease-out ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }`}
     >
-      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto px-6 text-center">
         <h2
-          className={`text-3xl font-bold mb-8 font-serif text-[#f0e9d9] transition-all duration-700 ease-out delay-200 ${
-            sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className={`text-3xl md:text-4xl font-bold mb-4 text-[#f0e9d9] transition-all duration-700 ease-out delay-200 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+            }`}
         >
-          ALREADY TESTED ON PEOPLE WHO ESCAPED
+          Real People. Real Results.
         </h2>
+        <p
+          className={`text-lg text-[#f0e9d9]/70 mb-12 transition-all duration-700 ease-out delay-300 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+            }`}
+        >
+          See how others reclaimed their time
+        </p>
+
         <div
           ref={cardsRef}
-          className={`grid md:grid-cols-3 gap-6 mb-8 transition-all duration-800 ease-out delay-300 ${
-            cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`grid md:grid-cols-3 gap-8 transition-all duration-800 ease-out delay-400 ${cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
         >
-          <div className="bg-[#f1eada]/10 p-6 rounded-2xl backdrop-blur-md border border-[#ca6e3f]/20 hover:border-[#ca6e3f]/40 transition-colors duration-300">
-            <div className="text-4xl mb-2">⭐⭐⭐⭐⭐</div>
-            <p className="text-[#f1eada] mb-4">
-              &quot;I got my life back. Lost 40lbs, started my business, found love. This challenge saved my
-              future.&quot;
-            </p>
-            <div className="text-[#ca6e3f] font-bold mt-2 font-serif">- Mohsin, 22 (Software Engineer)</div>
+          <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-[#ca6e3f]/20 hover:border-[#ca6e3f]/40 hover:bg-white/10 transition-all duration-300">
+            <div className="flex justify-center mb-4">
+              <div className="flex text-2xl">⭐⭐⭐⭐⭐</div>
+            </div>
+            <blockquote className="text-[#f1eada] mb-6 text-lg leading-relaxed italic">
+              "I went from 6 hours a day on social media to under 2 hours. Now I actually have time to study and exercise again."
+            </blockquote>
+            <cite className="text-[#ca6e3f] font-semibold not-italic">
+              – Mohsin, 22 (Software Engineer)
+            </cite>
           </div>
-          <div className="bg-[#f1eada]/10 p-6 rounded-2xl backdrop-blur-md border border-[#ca6e3f]/20 hover:border-[#ca6e3f]/40 transition-colors duration-300">
-            <div className="text-4xl mb-2">🔥</div>
-            <p className="text-[#f1eada] mb-4">
-              &quot;From 8 hours daily to 30 minutes. I read 12 books, learned coding, and got promoted. Worth every
-              penny.&quot;
-            </p>
-            <div className="text-[#ca6e3f] font-bold mt-2 font-serif">- Rehan, 22 (AI Engineer)</div>
+
+          <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-[#ca6e3f]/20 hover:border-[#ca6e3f]/40 hover:bg-white/10 transition-all duration-300">
+            <div className="flex justify-center mb-4">
+              <div className="flex text-2xl">⭐⭐⭐⭐⭐</div>
+            </div>
+            <blockquote className="text-[#f1eada] mb-6 text-lg leading-relaxed italic">
+              "I cut my daily screen time by 70%. In the past month I read 3 books and finally finished a side project I'd been putting off for years."
+            </blockquote>
+            <cite className="text-[#ca6e3f] font-semibold not-italic">
+              – Rehan, 28 (AI Engineer)
+            </cite>
           </div>
-          <div className="bg-[#f1eada]/10 p-6 rounded-2xl backdrop-blur-md border border-[#ca6e3f]/20 hover:border-[#ca6e3f]/40 transition-colors duration-300">
-            <div className="text-4xl mb-2">💎</div>
-            <p className="text-[#f1eada] mb-4">
-              &quot;The bonus on Day 14 alone generated $50k in revenue for my side hustle. This is life-changing.&quot;
-            </p>
-            <div className="text-[#ca6e3f] font-bold mt-2 font-serif">- Jennifer L., 32</div>
+
+          <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-[#ca6e3f]/20 hover:border-[#ca6e3f]/40 hover:bg-white/10 transition-all duration-300">
+            <div className="flex justify-center mb-4">
+              <div className="flex text-2xl">⭐⭐⭐⭐⭐</div>
+            </div>
+            <blockquote className="text-[#f1eada] mb-6 text-lg leading-relaxed italic">
+              "The daily reset helped me break habits I thought were permanent. I'm sleeping better, and my evenings finally feel free again."
+            </blockquote>
+            <cite className="text-[#ca6e3f] font-semibold not-italic">
+              – Jennifer, 32 (Designer)
+            </cite>
+          </div>
+        </div>
+
+        <div
+          className={`mt-12 transition-all duration-700 ease-out delay-600 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+            }`}
+        >
+          <div className="inline-flex items-center bg-[#ca6e3f]/20 backdrop-blur-sm border border-[#ca6e3f]/30 rounded-full px-6 py-3">
+            <div className="w-3 h-3 bg-[#ca6e3f] rounded-full animate-pulse mr-3"></div>
+            <span className="text-[#f1eada] text-sm font-medium">Join 1,200+ people who've already started their reset</span>
           </div>
         </div>
       </div>
