@@ -22,7 +22,7 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
         <div className="relative z-10">
           {/* Header */}
           <div className="text-center mb-6">
-            <h3 className="text-xl font-bold text-[#ca6e3f] mb-3 font-serif">
+            <h3 className="text-xl font-bold text-[#ca6e3f] mb-3  ">
               WAIT - BEFORE YOU GO
             </h3>
             <p className="text-base text-[#f1eada] leading-relaxed">
@@ -49,7 +49,7 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
                 onClose()
                 onBuyClick()
               }}
-              className="w-full bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] hover:from-[#ca6d41] hover:to-[#ca6e3f] text-white font-bold text-base py-3 px-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] font-serif"
+              className="w-full bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] hover:from-[#ca6d41] hover:to-[#ca6e3f] text-white font-bold text-base py-3 px-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]  "
             >
               YES - I&apos;M TAKING BACK MY LIFE
             </button>

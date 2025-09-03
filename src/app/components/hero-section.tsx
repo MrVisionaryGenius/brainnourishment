@@ -1,13 +1,12 @@
 "use client"
 
 import type React from "react"
-import { Clock, ChevronRight } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface HeroSectionProps {
-  timeWasted: number
   age: number
-  stats: { 
+  stats: {
     daysPerYear: number
     yearsLost: number
     percentageWasted: number
@@ -21,7 +20,7 @@ interface HeroSectionProps {
   onBuyClick: () => void
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ timeWasted, age, stats, onBuyClick }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ age, stats, onBuyClick }) => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation<HTMLElement>(0.1)
   const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation<HTMLDivElement>(0.2)
 
@@ -43,8 +42,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ timeWasted, age, stats, onBuy
             }`}
         >
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm border border-[#ca6e3f]/20 text-[#ca6e3f] px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
-            <Clock className="w-4 h-4 mr-2" />
-            Time lost today: {Math.floor(timeWasted / 3600)}h {Math.floor((timeWasted % 3600) / 60)}m {timeWasted % 60}s
+            Event Will Start in 6 Days
           </div>
         </div>
 
@@ -62,14 +60,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ timeWasted, age, stats, onBuy
             className={`text-xl sm:text-2xl text-[#1b201c]/80 mb-4 max-w-4xl mx-auto leading-relaxed font-medium transition-all duration-700 ease-out delay-300 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
               }`}
           >
-            The average person loses <span className="text-[#ca6e3f] font-semibold">44 full days every year</span> to scrolling. Our 14-day reset helps you cut screen time in half—without quitting your phone.
+            The average person loses <span className="text-[#ca6e3f] font-semibold">44 full days every year</span> to scrolling. Our 14-day reset helps you cut screen time in half-without quitting your phone.
           </p>
 
           <p
             className={`text-lg text-[#1b201c]/70 mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-700 ease-out delay-400 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
               }`}
           >
-            You&apos;re <span className="text-[#ca6e3f] font-semibold">{age} years old.</span> You spend <span className="text-[#ca6e3f] font-semibold">{stats.minutesPerDay} minutes daily</span> scrolling—that&apos;s <span className="text-[#ca6e3f] font-semibold">{stats.percentageWasted}% of your waking life</span> and {stats.daysAlreadyLost > 0 ? `you've already lost ${stats.daysAlreadyLost} days. ` : ''}enough time to read <span className="text-[#ca6e3f] font-semibold">{stats.booksPerYear} books</span> or complete <span className="text-[#ca6e3f] font-semibold">{stats.workoutsPerYear} workouts</span> every year.
+            You&apos;re <span className="text-[#ca6e3f] font-semibold">{age} years old.</span> You spend <span className="text-[#ca6e3f] font-semibold">{stats.minutesPerDay} minutes daily</span> scrolling-that&apos;s <span className="text-[#ca6e3f] font-semibold">{stats.percentageWasted}% of your waking life</span> and {stats.daysAlreadyLost > 0 ? `you've already lost ${stats.daysAlreadyLost} days. ` : ''}enough time to read <span className="text-[#ca6e3f] font-semibold">{stats.booksPerYear} books</span> or complete <span className="text-[#ca6e3f] font-semibold">{stats.workoutsPerYear} workouts</span> every year.
           </p>
 
           <div
@@ -80,12 +78,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ timeWasted, age, stats, onBuy
               onClick={onBuyClick}
               className="group bg-[#ca6e3f] hover:bg-[#ca6d41] text-white font-semibold text-lg py-4 px-8 rounded-full shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3"
             >
-              <span>Start the 14-Day Reset — Just $14</span>
+              <span>Start the 14-Day Reset - Just $14</span>
               <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
 
             <div className="text-center">
-              <div className="text-sm text-[#1b201c]/60">Normally $199</div>
+              <div className="text-sm text-[#1b201c]/60">Normally $49</div>
               <div className="text-lg font-semibold text-[#ca6e3f]">Limited time launch offer</div>
             </div>
           </div>

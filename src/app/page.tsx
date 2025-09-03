@@ -14,13 +14,20 @@ import AgeInputModal from "./components/age-input"
 import ExitModal from "./components/exit-modal"
 
 const App = () => {
-  const [timeWasted, setTimeWasted] = useState(0)
-  const [age, setAge] = useState<number | null>(null) // null until age is set
+  const [age, setAge] = useState<number | null>(null)
   const [isExitModalOpen, setIsExitModalOpen] = useState(false)
   const [isModalOpen] = useState(false)
 
   // Set your Gumroad or Whop product URL here
   const GUMROAD_WHOP_URL = "https://your-product-link.com"
+
+  // Load age from sessionStorage on component mount
+  useEffect(() => {
+    const storedAge = sessionStorage.getItem('userAge')
+    if (storedAge) {
+      setAge(parseInt(storedAge))
+    }
+  }, [])
 
   // Show age modal after 2 seconds if age not set
   useEffect(() => {
@@ -32,14 +39,6 @@ const App = () => {
       return () => clearTimeout(timer)
     }
   }, [age])
-
-  // Real-time counter effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeWasted((prev) => prev + 1)
-    }, 1000)
-    return () => clearInterval(interval)
-  }, [])
 
   // Timer-based exit pop-up (only after age is set)
   useEffect(() => {
@@ -56,6 +55,8 @@ const App = () => {
 
   const handleAgeSubmit = (userAge: number) => {
     setAge(userAge)
+    // Store age in sessionStorage so it persists during the session
+    sessionStorage.setItem('userAge', userAge.toString())
   }
 
   const handleBuyClick = () => {
@@ -121,7 +122,6 @@ const App = () => {
       <FloatingActionButton onBuyClick={handleBuyClick} />
 
       <HeroSection 
-        timeWasted={timeWasted} 
         age={displayAge} 
         stats={stats} 
         onBuyClick={handleBuyClick} 

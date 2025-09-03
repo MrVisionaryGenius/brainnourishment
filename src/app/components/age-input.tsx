@@ -49,7 +49,7 @@ const AgeInputModal: React.FC<AgeInputModalProps> = ({ isOpen, onAgeSubmit }) =>
                         <div className="w-16 h-16 bg-gradient-to-br from-[#ca6e3f] to-[#ca6d41] rounded-full flex items-center justify-center mx-auto mb-4">
                             <span className="text-2xl font-bold text-white">👋</span>
                         </div>
-                        <h3 className="text-xl font-bold text-[#f0e9d9] mb-2 font-serif">
+                        <h3 className="text-xl font-bold text-[#f0e9d9] mb-2  ">
                             Quick Question...
                         </h3>
                         <p className="text-sm text-[#f1eada]/80 leading-relaxed">
@@ -86,7 +86,7 @@ const AgeInputModal: React.FC<AgeInputModalProps> = ({ isOpen, onAgeSubmit }) =>
                         <div className="space-y-3 pt-2">
                             <button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] hover:from-[#ca6d41] hover:to-[#ca6e3f] text-white font-bold text-base py-3 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] font-serif"
+                                className="w-full bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] hover:from-[#ca6d41] hover:to-[#ca6e3f] text-white font-bold text-base py-3 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]  "
                             >
                                 Show Me My Results
                             </button>

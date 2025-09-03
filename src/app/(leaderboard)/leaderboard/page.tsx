@@ -14,33 +14,34 @@ export default function Home() {
           <div className="relative container mx-auto px-4 py-20 text-center">
             <div className="max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#1b201c] mb-6 tracking-tight">
-                🔥 14-Day Screen Time Game
+                14 Days. Zero Excuses. One Champion.
               </h1>
               <p className="text-lg md:text-xl lg:text-2xl text-[#1b201c]/80 mb-8 font-medium">
-                Only 456 players. Compete. Eliminate. Win.
+                Compete with players worldwide. Eliminate distractions. Rise to the top.
               </p>
-              <Button
-                size="lg"
-                className="bg-[#ca6e3f] hover:bg-[#ca6d41] text-white px-6 py-3 text-base md:text-lg font-semibold rounded-full shadow-2xl hover:shadow-[#ca6e3f]/25 transition-all duration-300 transform hover:scale-105"
-              >
-                Check the Live Leaderboard
+              <Button >
+                See Who&apos;s Winning
               </Button>
+
             </div>
           </div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-[#ca6e3f]/10 to-[#f1eada]/20 rounded-full blur-3xl"></div>
-        </section>
+        </section >
 
         {/* Leaderboard Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1b201c] mb-4">Live Leaderboard</h2>
-              <p className="text-[#1b201c]/70 text-base md:text-lg">Track the competition in real-time</p>
-            </div>
+        <section className="py-16" >
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#1b201c] mb-4">
+              Live Leaderboard
+            </h1>
+            <p className="text-[#1b201c]/70 text-lg md:text-xl mb-8">
+              Track the challenge in real time. Who&apos;s climbing, who&apos;s falling - and who will win it all.
+            </p>
             <Leaderboard />
           </div>
         </section>
-      </div>
+
+      </div >
     </>
   )
 }

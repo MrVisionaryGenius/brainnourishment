@@ -28,7 +28,7 @@ const OfferSection: React.FC<OfferSectionProps> = ({ onBuyClick }) => {
             Your 14-Day Reset to Take Back Control of Your Time
           </h2>
           <p className="text-xl text-[#1b201c]/80 max-w-4xl mx-auto leading-relaxed">
-            Step-by-step guidance, proven strategies, and daily accountability designed to cut your screen time in half—without deleting every app or going off the grid.
+            Step-by-step guidance, proven strategies, and daily accountability designed to cut your screen time in half-without deleting every app or going off the grid.
           </p>
         </div>
 

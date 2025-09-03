@@ -20,7 +20,7 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({ onBuyClick 
     >
       <button
         onClick={onBuyClick}
-        className="group relative bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] hover:from-[#ca6d41] hover:to-[#ca6e3f] text-white font-bold py-3 px-5 rounded-2xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1 font-serif overflow-hidden"
+        className="group relative bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] hover:from-[#ca6d41] hover:to-[#ca6e3f] text-white font-bold py-3 px-5 rounded-2xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1   overflow-hidden"
       >
         <div className="flex items-center space-x-2 relative z-10">
           <span className="text-sm">Get Started — $14</span>

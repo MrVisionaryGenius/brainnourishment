@@ -25,7 +25,7 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <h2
-            className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-serif text-white leading-tight transform transition-all duration-1200 ease-out delay-300 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
+            className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight transform transition-all duration-1200 ease-out delay-300 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
               }`}
           >
             Two Paths. One Choice.
@@ -56,7 +56,7 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
                 <span className="text-white/60 line-through text-base">(normally $49)</span>
               </p>
               <div className="text-center">
-                <div className="text-lg text-white/80 mb-2">530 spots remaining</div>
+                <div className="text-lg text-white/80 mb-2 font-semibold">49 already joined</div>
                 <div className="w-full bg-[#1a1f1b]/50 rounded-full h-2">
                   <div
                     className="bg-gradient-to-r from-white to-white/80 h-2 rounded-full transition-all duration-1000 ease-out"
@@ -79,11 +79,11 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
           <button
             ref={buttonRef}
             onClick={onBuyClick}
-            className={`group relative bg-[#1a1f1b] hover:bg-[#1a1f1b]/90 text-[#f0e9d9] font-bold text-xl md:text-2xl py-6 px-12 rounded-full shadow-2xl transform transition-all duration-700 hover:scale-105 hover:shadow-3xl hover:-translate-y-1 font-serif overflow-hidden ${buttonVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-90"
+            className={`group relative bg-[#1a1f1b] hover:bg-[#1a1f1b]/90 text-[#f0e9d9] font-bold text-xl md:text-2xl py-6 px-12 rounded-full shadow-2xl transform transition-all duration-700 hover:scale-105 hover:shadow-3xl hover:-translate-y-1   overflow-hidden ${buttonVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-90"
               }`}
           >
             <span className="relative z-10 flex items-center justify-center">
-              Start My 14-Day Reset — $14
+              Start My 14-Day Reset - $14
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#ca6e3f]/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
           </button>
@@ -92,7 +92,7 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
             className={`text-sm text-white/60 mt-6 transform transition-all duration-1200 ease-out delay-1100 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
           >
-            14-day money-back guarantee • Join 2,470+ others who chose freedom
+            Join 2,470+ others who chose freedom
           </p>
         </div>
       </div>

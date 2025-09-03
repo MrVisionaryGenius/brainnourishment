@@ -17,7 +17,7 @@ const SocialProofSection = () => {
           className={`text-3xl md:text-4xl font-bold mb-4 text-[#f0e9d9] transition-all duration-700 ease-out delay-200 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
             }`}
         >
-          Real People. Real Results.
+          Why People are Joining.
         </h2>
         <p
           className={`text-lg text-[#f0e9d9]/70 mb-12 transition-all duration-700 ease-out delay-300 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
@@ -74,7 +74,7 @@ const SocialProofSection = () => {
         >
           <div className="inline-flex items-center bg-[#ca6e3f]/20 backdrop-blur-sm border border-[#ca6e3f]/30 rounded-full px-6 py-3">
             <div className="w-3 h-3 bg-[#ca6e3f] rounded-full animate-pulse mr-3"></div>
-            <span className="text-[#f1eada] text-sm font-medium">Join 1,200+ people who&apos;ve already started their reset</span>
+            <span className="text-[#f1eada] text-sm font-medium">Join 40+ people who&apos;ve already started their reset</span>
           </div>
         </div>
       </div>

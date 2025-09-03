@@ -29,7 +29,7 @@ const ShockSection = () => {
               }`}
           >
             <p className="text-xl md:text-2xl text-white mb-6 leading-relaxed">
-              If you&apos;re reading this and already feel the urge to check your notifications—you&apos;re not alone.
+              If you&apos;re reading this and already feel the urge to check your notifications-you&apos;re not alone.
             </p>
             <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
               It&apos;s not weakness. It&apos;s design. Tech companies spend billions making sure you can&apos;t look away.
