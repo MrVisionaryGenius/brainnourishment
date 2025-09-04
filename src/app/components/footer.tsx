@@ -5,7 +5,7 @@ import { Heart, Mail, Shield } from "lucide-react"
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#1a1f1b] text-[#f0e9d9] py-12">
+    <footer className="bg-[#1a1f1b] text-[#f0e9d9] py-12" >
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
@@ -49,13 +49,13 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-[#f1eada]">© 2025 Strawhat Developers. All rights reserved.</p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors">
+              <a href="/privacy-policy" className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors">
+              <a href="/terms" className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors">
+              <a href="/refund-policy" className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors">
                 Refund Policy
               </a>
             </div>

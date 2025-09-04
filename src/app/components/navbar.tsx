@@ -69,14 +69,14 @@ export function Navbar() {
                                 Take Quiz
                             </Link>
                             <Link
-                                href="#about"
+                                href="/leaderboard"
                                 className="block px-3 py-2 hover:text-[#ca6e3f] transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                About
+                                Leaderboard
                             </Link>
                             <Link
-                                href="#contact"
+                                href="#footer"
                                 className="block px-3 py-2 hover:text-[#ca6e3f] transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
                             >

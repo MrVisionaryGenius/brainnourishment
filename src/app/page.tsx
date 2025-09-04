@@ -12,6 +12,7 @@ import Footer from "./components/footer"
 import { Navbar } from "./components/navbar"
 import AgeInputModal from "./components/age-input"
 import ExitModal from "./components/exit-modal"
+import TestimonialCarousel from "./components/testimonial-section"
 
 const App = () => {
   const [age, setAge] = useState<number | null>(null)
@@ -131,7 +132,9 @@ const App = () => {
 
       <OfferSection onBuyClick={handleBuyClick} />
 
-      <SocialProofSection />
+      <SocialProofSection /> 
+
+      <TestimonialCarousel />
 
       <FinalCtaSection onBuyClick={handleBuyClick} />
 
