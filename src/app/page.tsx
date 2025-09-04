@@ -5,7 +5,7 @@ import FloatingActionButton from "./components/floating-action-button"
 import HeroSection from "./components/hero-section"
 import ShockSection from "./components/shock-section"
 import OfferSection from "./components/offer-section"
-import SocialProofSection from "./components/social-proof-section"
+// import SocialProofSection from "./components/social-proof-section"
 import FinalCtaSection from "./components/final-cta-section"
 import LastChanceSection from "./components/last-chance-section"
 import Footer from "./components/footer"
@@ -132,7 +132,7 @@ const App = () => {
 
       <OfferSection onBuyClick={handleBuyClick} />
 
-      <SocialProofSection /> 
+      {/* <SocialProofSection />  */}
 
       <TestimonialCarousel />
 
