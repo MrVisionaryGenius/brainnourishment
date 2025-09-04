@@ -28,8 +28,8 @@ export function Navbar() {
                         <Link href="/leaderboard" className="hover:text-[#ca6e3f] transition-colors">
                             Leaderboard
                         </Link>
-                        <Link href="#contact" className="hover:text-[#ca6e3f] transition-colors">
-                            Contact
+                        <Link href="/about-us" className="hover:text-[#ca6e3f] transition-colors">
+                            About us
                         </Link>
                         <Link
                             href="/quiz"
@@ -76,11 +76,11 @@ export function Navbar() {
                                 Leaderboard
                             </Link>
                             <Link
-                                href="#footer"
+                                href="/about-us"
                                 className="block px-3 py-2 hover:text-[#ca6e3f] transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                Contact
+                                About us
                             </Link>
                             <Link
                                 href="/quiz"
