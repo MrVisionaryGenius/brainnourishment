@@ -92,7 +92,7 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
             className={`text-sm text-white/60 mt-6 transform transition-all duration-1200 ease-out delay-1100 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
           >
-            Join 2,470+ others who chose freedom
+            Join 49+ others who chose freedom
           </p>
         </div>
       </div>

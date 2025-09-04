@@ -106,7 +106,7 @@ const SocialProofSection = () => {
             sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
           }`}
         >
-          See how others reclaimed their time
+          See how others are planning to reclaim their time
         </p>
 
         {/* Horizontal Scrolling Carousel */}

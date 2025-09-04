@@ -24,9 +24,10 @@ const Footer: React.FC = () => {
           <div className="text-center">
             <h4 className="text-lg font-bold mb-4 text-[#ca6e3f]  ">Get Support</h4>
             <div className="space-y-3">
-              <div className="flex items-center justify-center space-x-2">
+              <div className="flex flex-col items-center justify-center space-x-2">
                 <Mail className="w-4 h-4 text-[#ca6e3f]" />
-                <span className="text-[#f1eada]">support@brainnourishment.com</span>
+                <span className="text-[#f1eada]">partnerships@brainnourishment.io</span>
+                <span className="text-[#f1eada]">brainnourishmentt@gmail.com</span>
               </div>
               <p className="text-sm text-[#f1eada]">Questions? We&apos;re here to help you succeed.</p>
             </div>
@@ -38,7 +39,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center justify-center md:justify-end space-x-2">
                 <Shield className="w-4 h-4 text-[#ca6e3f]" />
-                <span className="text-[#f1eada]">94% success rate or your money back</span>
+                <span className="text-[#f1eada]">94% success rate</span>
               </div>
             </div>
           </div>
@@ -47,20 +48,40 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-[#ca6e3f]/20 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-[#f1eada]">© 2025 Strawhat Developers. All rights reserved.</p>
+            <div className="flex flex-col items-center md:items-start space-y-1">
+              <p className="text-sm text-[#f1eada]">
+                © 2025 Brain Nourishment. All rights reserved.
+              </p>
+              <p className="text-sm text-[#f1eada]">
+                Website designed &amp; developed by{" "}
+               <a href="https://strawhatdevs.com" target="_blank" rel="noopener noreferrer">
+                <span className="font-semibold text-[#ca6e3f]">StrawhatDevs</span>
+                </a>
+              </p>
+            </div>
             <div className="flex space-x-6 text-sm">
-              <a href="/privacy-policy" className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors">
+              <a
+                href="/privacy-policy"
+                className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="/terms" className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors">
+              <a
+                href="/terms"
+                className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors"
+              >
                 Terms of Service
               </a>
-              <a href="/refund-policy" className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors">
+              <a
+                href="/refund-policy"
+                className="text-[#f1eada] hover:text-[#ca6e3f] transition-colors"
+              >
                 Refund Policy
               </a>
             </div>
           </div>
         </div>
+
       </div>
     </footer>
   )

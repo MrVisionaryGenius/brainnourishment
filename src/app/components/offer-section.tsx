@@ -134,10 +134,11 @@ const OfferSection: React.FC<OfferSectionProps> = ({ onBuyClick }) => {
               <div className="bg-[#f1eada]/50 p-6 rounded-2xl mb-8 border border-[#ca6e3f]/10">
                 <div className="flex items-center justify-center mb-3">
                   <Shield className="w-6 h-6 text-[#ca6e3f] mr-2" />
-                  <h3 className="text-lg font-semibold text-[#1b201c]">14-Day Guarantee</h3>
+                  <h3 className="text-lg font-semibold text-[#1b201c]">14-Day Reset</h3>
                 </div>
                 <p className="text-sm text-[#1b201c]/70 leading-relaxed">
-                  Try it for 14 days. If you don&apos;t feel more in control of your time, we&apos;ll refund every cent.
+                  Follow the step-by-step system for 14 days and experience how much more time,
+                  focus, and energy you can reclaim.
                 </p>
               </div>
 

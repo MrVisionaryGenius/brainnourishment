@@ -155,12 +155,12 @@ const ShockSection = () => {
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
 
-              <button
+              {/* <button
                 onClick={() => handleCTAClick('secondary_final')}
                 className="group border-2 border-white/50 text-white font-semibold px-8 py-4 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:border-white/70"
               >
                 Learn More About Our Method
-              </button>
+              </button> */}
             </div>
 
             <p className="text-white/70 text-sm mt-4">
