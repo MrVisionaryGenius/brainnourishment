@@ -52,7 +52,7 @@ const TestimonialCarousel = () => {
             What Our Community Says
           </h2>
           <p className="text-xl text-[#1b201c]/80 max-w-3xl mx-auto leading-relaxed">
-            Real stories from people who've transformed their relationship with technology
+            Real stories from people who&apos;ve transformed their relationship with technology
           </p>
         </div>
       </div>
@@ -74,7 +74,7 @@ const TestimonialCarousel = () => {
                     <Quote className="w-6 h-6 text-white" />
                   </div>
                   <p className="text-[#1b201c]/80 leading-relaxed text-base mb-6 italic">
-                    "{testimonial.text}"
+                    &quot;{testimonial.text}&quot;
                   </p>
                 </div>
                 

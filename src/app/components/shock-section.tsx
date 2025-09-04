@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation"
 const useScrollAnimation = (threshold = 0.1) => {
   const [isVisible, setIsVisible] = useState(false)
 
-  const ref = (node: any) => {
+  const ref = (node: Element | null) => {
     if (node) {
       const observer = new IntersectionObserver(
         ([entry]) => {
@@ -33,7 +33,7 @@ const ShockSection = () => {
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation(0.2)
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation(0.1)
 
-  const handleCTAClick = (position: any) => {
+  const handleCTAClick = (position: string) => {
     console.log(`CTA clicked from: ${position}`)
     router.push("/quiz")
   }
@@ -90,7 +90,7 @@ const ShockSection = () => {
             <div className="bg-white/15 rounded-2xl p-6 border border-white/30">
               <div className="flex items-center justify-center gap-2 mb-3">
                 <Clock className="w-5 h-5 text-white" />
-                <p className="text-white font-medium">Don't lose another day to endless scrolling</p>
+                <p className="text-white font-medium">Don&apos;t lose another day to endless scrolling</p>
               </div>
               <button
                 onClick={() => handleCTAClick('urgency')}
@@ -143,7 +143,7 @@ const ShockSection = () => {
               Ready To Reclaim Your Life?
             </h3>
             <p className="text-lg text-white/90 mb-6">
-              Join thousands who've already broken free from phone addiction
+              Join thousands who&apos;ve already broken free from phone addiction
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

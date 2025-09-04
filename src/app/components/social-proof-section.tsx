@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react"
 const useScrollAnimation = (threshold = 0.1) => {
   const [isVisible, setIsVisible] = useState(false)
   
-  const ref = (node: any) => {
+  const ref = (node: Element | null) => {
     if (node) {
       const observer = new IntersectionObserver(
         ([entry]) => {
@@ -132,7 +132,7 @@ const SocialProofSection = () => {
                     <div className="flex text-2xl">⭐⭐⭐⭐⭐</div>
                   </div>
                   <blockquote className="text-[#f1eada] mb-6 text-lg leading-relaxed italic min-h-[120px] flex items-center">
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                   </blockquote>
                   <cite className="text-[#ca6e3f] font-semibold not-italic">
                     – {testimonial.name} ({testimonial.role})
