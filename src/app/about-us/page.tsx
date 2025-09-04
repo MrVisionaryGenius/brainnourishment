@@ -386,7 +386,7 @@ const AboutUsPage = () => {
                                 <p className="text-2xl text-[#1b201c] leading-relaxed font-medium">
                                     We&apos;re here to help you <span className="text-[#ca6e3f] font-bold">reclaim your time</span>,{' '}
                                     <span className="text-[#ca6e3f] font-bold">build healthier digital habits</span>, and{' '}
-                                    <span className="text-[#ca6e3f] font-bold">create the life you deserve</span>—one intentional day at a time.
+                                    <span className="text-[#ca6e3f] font-bold">create the life you deserve</span>-one intentional day at a time.
                                 </p>
                             </div>
                         </div>
