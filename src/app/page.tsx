@@ -20,7 +20,8 @@ const App = () => {
   const [isModalOpen] = useState(false)
 
   // Set your Gumroad or Whop product URL here
-  const WHOP_URL = "https://whop.com/brain-nourishment/14-day-phone-reset/"
+  // const WHOP_URL = "https://whop.com/brain-nourishment/14-day-phone-reset/"
+  const WHOP_URL = "https://whops.com/"
 
   // Load age from sessionStorage on component mount
   useEffect(() => {
