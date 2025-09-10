@@ -74,13 +74,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ age, stats, onBuyClick }) => 
             className={`flex flex-col sm:flex-row gap-6 justify-center items-center mb-10 transition-all duration-700 ease-out delay-500 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
               }`}
           >
-            <button
-              onClick={onBuyClick}
-              className="group bg-[#ca6e3f] hover:bg-[#ca6d41] text-white font-semibold text-lg py-4 px-8 rounded-full shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3"
-            >
-              <span>Start the 14-Day Reset - Just $14</span>
-              <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+           <button
+  onClick={onBuyClick}
+  className="group bg-[#ca6e3f] hover:bg-[#ca6d41] text-white font-semibold text-lg py-4 px-8 rounded-full shadow-xl shadow-[#ca6e3f]/40 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#ca6e3f]/60 flex items-center space-x-3"
+>
+  <span>Start the 14-Day Reset - Just $14</span>
+  <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+</button>
+
+
 
             <div className="text-center">
               <div className="text-sm text-[#1b201c]/60">Normally $49</div>

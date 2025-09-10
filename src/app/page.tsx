@@ -5,7 +5,6 @@ import FloatingActionButton from "./components/floating-action-button"
 import HeroSection from "./components/hero-section"
 import ShockSection from "./components/shock-section"
 import OfferSection from "./components/offer-section"
-// import SocialProofSection from "./components/social-proof-section"
 import FinalCtaSection from "./components/final-cta-section"
 import LastChanceSection from "./components/last-chance-section"
 import Footer from "./components/footer"
@@ -13,6 +12,7 @@ import { Navbar } from "./components/navbar"
 import AgeInputModal from "./components/age-input"
 import ExitModal from "./components/exit-modal"
 import TestimonialCarousel from "./components/testimonial-section"
+import SocialProofSection from "./components/social-proof-section"
 
 const App = () => {
   const [age, setAge] = useState<number | null>(null)
@@ -20,7 +20,7 @@ const App = () => {
   const [isModalOpen] = useState(false)
 
   // Set your Gumroad or Whop product URL here
-  const GUMROAD_WHOP_URL = "https://your-product-link.com"
+  const WHOP_URL = "https://whop.com/brain-nourishment/14-day-phone-reset/"
 
   // Load age from sessionStorage on component mount
   useEffect(() => {
@@ -61,7 +61,7 @@ const App = () => {
   }
 
   const handleBuyClick = () => {
-    window.location.href = GUMROAD_WHOP_URL
+    window.location.href = WHOP_URL
   }
 
   const calculateLifeImpact = (hoursDaily: number, userAge: number) => {
@@ -132,7 +132,7 @@ const App = () => {
 
       <OfferSection onBuyClick={handleBuyClick} />
 
-      {/* <SocialProofSection />  */}
+      <SocialProofSection /> 
 
       <TestimonialCarousel />
 

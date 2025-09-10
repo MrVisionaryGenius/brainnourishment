@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { ArrowRight } from "lucide-react"
 
 // Mock hook for demonstration - replace with your actual implementation
@@ -19,6 +19,7 @@ const useScrollAnimation = (threshold = 0.1) => {
       )
       observer.observe(node)
       
+      // Cleanup function for the observer
       return () => observer.disconnect()
     }
   }
@@ -67,19 +68,6 @@ const testimonials = [
 
 const SocialProofSection = () => {
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation(0.1)
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
-
-  // Auto-scroll functionality
-  useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-      }, 4000) // Change every 4 seconds
-
-      return () => clearInterval(interval)
-    }
-  }, [isPaused])
 
   const handleCTAClick = () => {
     console.log("Social proof CTA clicked")
@@ -89,11 +77,11 @@ const SocialProofSection = () => {
   return (
     <section
       ref={sectionRef}
-      className={`py-20 bg-[#1a1f1b] transition-all duration-700 ease-out ${
+      className={`py-20 bg-[#1a1f1b] transition-all duration-700 ease-out overflow-hidden ${
         sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
-      <div className="container mx-auto px-6 text-center">
+      <div className="container mx-auto px-6 text-center mb-12">
         <h2
           className={`text-3xl md:text-4xl font-bold mb-4 text-[#f0e9d9] transition-all duration-700 ease-out delay-200 ${
             sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
@@ -108,57 +96,46 @@ const SocialProofSection = () => {
         >
           See how others are planning to reclaim their time
         </p>
+      </div>
 
-        {/* Horizontal Scrolling Carousel */}
-        <div 
-          className="relative overflow-hidden mb-12"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          <div 
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ 
-              transform: `translateX(-${currentIndex * (100 / 3)}%)`,
-              width: `${(testimonials.length * 100) / 3}%`
-            }}
-          >
-            {testimonials.map((testimonial) => (
-              <div 
-                key={testimonial.id}
-                className="w-1/3 flex-shrink-0 px-4"
-              >
-                <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-[#ca6e3f]/20 hover:border-[#ca6e3f]/40 hover:bg-white/10 transition-all duration-300 h-full">
-                  <div className="flex justify-center mb-4">
-                    <div className="flex text-2xl">⭐⭐⭐⭐⭐</div>
+      {/* Testimonials Grid */}
+      <div className="container mx-auto px-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-[#ca6e3f]/20 hover:border-[#ca6e3f]/40 hover:bg-white/10 transition-all duration-300 "
+            >
+              <div className="flex justify-center mb-4">
+                <div className="flex text-xl">⭐⭐⭐⭐⭐</div>
+              </div>
+              
+              <blockquote className="text-[#f1eada] mb-6 text-lg leading-relaxed italic min-h-[120px] flex items-center">
+                &quot;{testimonial.quote}&quot;
+              </blockquote>
+              
+              <div className="border-t border-[#ca6e3f]/20 pt-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#ca6e3f] to-[#ca6d41] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    {testimonial.name.split(',')[0][0]}
                   </div>
-                  <blockquote className="text-[#f1eada] mb-6 text-lg leading-relaxed italic min-h-[120px] flex items-center">
-                    &quot;{testimonial.quote}&quot;
-                  </blockquote>
-                  <cite className="text-[#ca6e3f] font-semibold not-italic">
-                    – {testimonial.name} ({testimonial.role})
-                  </cite>
+                  <div className="text-left">
+                    <div className="font-semibold text-[#f0e9d9] text-lg">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-[#ca6e3f] text-sm">
+                      {testimonial.role}
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Navigation Dots */}
-        <div className="flex justify-center mb-8 space-x-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'bg-[#ca6e3f] scale-125' 
-                  : 'bg-[#ca6e3f]/30 hover:bg-[#ca6e3f]/60'
-              }`}
-            />
+            </div>
           ))}
         </div>
+      </div>
 
-        {/* Stats and CTA Section */}
+      {/* Stats and CTA Section */}
+      <div className="container mx-auto px-6 text-center">
         <div
           className={`transition-all duration-700 ease-out delay-600 ${
             sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
@@ -198,14 +175,6 @@ const SocialProofSection = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .w-1-3 {
-            width: 100% !important;
-          }
-        }
-      `}</style>
     </section>
   )
 }

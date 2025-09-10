@@ -51,16 +51,16 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
                 <span className="text-white font-semibold text-sm uppercase tracking-wider">Act Now</span>
               </div>
               <p className="text-lg text-white/90 font-medium mb-4">
-                We&apos;re opening spots for our first 3,000 members at the launch price of{" "}
+                We&apos;re opening spots for our first 1500 members at the launch price of{" "}
                 <span className="font-bold text-2xl">$14</span>{" "}
                 <span className="text-white/60 line-through text-base">(normally $49)</span>
               </p>
               <div className="text-center">
-                <div className="text-lg text-white/80 mb-2 font-semibold">49 already joined</div>
+                <div className="text-lg text-white/80 mb-2 font-semibold">5 already joined</div>
                 <div className="w-full bg-[#1a1f1b]/50 rounded-full h-2">
                   <div
                     className="bg-gradient-to-r from-white to-white/80 h-2 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: "82%" }}
+                    style={{ width: "5%" }}
                   ></div>
                 </div>
               </div>
@@ -92,7 +92,7 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
             className={`text-sm text-white/60 mt-6 transform transition-all duration-1200 ease-out delay-1100 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
           >
-            Join 49+ others who chose freedom
+            Join 5+ others who chose freedom
           </p>
         </div>
       </div>
