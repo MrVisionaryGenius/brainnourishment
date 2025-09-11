@@ -144,11 +144,12 @@ const OfferSection: React.FC<OfferSectionProps> = ({ onBuyClick }) => {
 
               <button
                 onClick={onBuyClick}
-                className="group w-full bg-[#ca6e3f] hover:bg-[#ca6d41] text-white font-semibold text-lg py-4 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl mb-6 flex items-center justify-center space-x-3"
+                className="group w-full bg-[#ca6e3f] hover:bg-[#ca6d41] text-white font-semibold text-lg py-4 rounded-2xl shadow-lg shadow-[#ca6e3f]/40 hover:shadow-[#ca6e3f]/60 transform transition-all duration-300 hover:scale-105 hover:shadow-xl mb-6 flex items-center justify-center space-x-3"
               >
                 <span>Start My 14-Day Reset for $14</span>
                 <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
+
 
               <div className="flex items-center justify-center space-x-4 text-sm text-[#1b201c]/60">
                 <div className="flex items-center">

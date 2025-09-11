@@ -26,16 +26,14 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <div className="max-w-4xl mx-auto mb-16">
           <h2
-            className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-[#f0e9d9] transform transition-all duration-1200 ease-out delay-300 ${
-              sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
-            }`}
+            className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-[#f0e9d9] transform transition-all duration-1200 ease-out delay-300 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
+              }`}
           >
             This Is Your Moment To Take Back Control
           </h2>
           <p
-            className={`text-lg md:text-xl text-[#f1eada]/90 leading-relaxed max-w-3xl mx-auto transform transition-all duration-1200 ease-out delay-500 ${
-              sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            }`}
+            className={`text-lg md:text-xl text-[#f1eada]/90 leading-relaxed max-w-3xl mx-auto transform transition-all duration-1200 ease-out delay-500 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              }`}
           >
             You don&apos;t have to keep losing hours every day to a device designed to keep you hooked. In just 14 days,
             you can reset your habits, reclaim your time, and feel in control again.
@@ -44,9 +42,8 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
 
         {/* Urgency Box */}
         <div
-          className={`max-w-2xl mx-auto mb-16 transform transition-all duration-1200 ease-out delay-700 ${
-            sectionVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
-          }`}
+          className={`max-w-2xl mx-auto mb-16 transform transition-all duration-1200 ease-out delay-700 ${sectionVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+            }`}
         >
           <div className="bg-gradient-to-r from-[#ca6e3f]/20 to-[#ca6e3f]/10 backdrop-blur-sm p-8 rounded-2xl border border-[#ca6e3f]/30 shadow-xl">
             <div className="flex items-center justify-center mb-4">
@@ -56,7 +53,7 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
             <p className="text-lg text-[#f1eada] font-medium leading-relaxed">
               We&apos;re opening spots for our first 3,000 members at the launch price of{" "}
               <span className="text-[#ca6e3f] font-bold">$14</span>{" "}
-              <span className="text-[#f1eada]/70 line-through">(normally $49)</span>. 
+              <span className="text-[#f1eada]/70 line-through">(normally $49)</span>.
               Once they&apos;re gone, the offer closes.
             </p>
             <div className="mt-6 text-center">
@@ -68,9 +65,8 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
         {/* Two Paths Comparison */}
         <div
           ref={cardsRef}
-          className={`grid md:grid-cols-2 gap-8 mb-16 transform transition-all duration-1400 ease-out delay-900 ${
-            cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-          }`}
+          className={`grid md:grid-cols-2 gap-8 mb-16 transform transition-all duration-1400 ease-out delay-900 ${cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+            }`}
         >
           <div className="group">
             <div className="bg-gradient-to-br from-red-900/20 to-red-800/10 backdrop-blur-sm p-8 rounded-2xl border border-red-500/30 shadow-xl transition-all duration-700 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1">
@@ -120,9 +116,8 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
         </div>
 
         <div
-          className={`mb-12 transform transition-all duration-1200 ease-out delay-1100 ${
-            sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`mb-12 transform transition-all duration-1200 ease-out delay-1100 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <p className="text-xl md:text-2xl text-[#f1eada] font-medium italic max-w-2xl mx-auto leading-relaxed">
             The scroll trap isn&apos;t your destiny - unless you choose it.
@@ -132,15 +127,17 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
         <button
           ref={buttonRef}
           onClick={onBuyClick}
-          className={`group relative bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] hover:from-[#ca6d41] hover:to-[#ca6e3f] text-white font-bold text-xl md:text-2xl py-6 px-10 rounded-full shadow-xl transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:-translate-y-1   overflow-hidden ${
-            buttonVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-90"
-          }`}
+          className={`group relative bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] hover:from-[#ca6d41] hover:to-[#ca6e3f] text-white font-bold text-xl md:text-2xl py-6 px-10 rounded-full shadow-xl shadow-[#ca6e3f]/40 hover:shadow-[#ca6e3f]/60 transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:-translate-y-1 overflow-hidden ${buttonVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-90"
+            }`}
         >
           <span className="relative z-10 flex items-center justify-center">
             Choose Freedom Today - $14
           </span>
+
+          {/* Shimmer effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
         </button>
+
       </div>
     </section>
   )

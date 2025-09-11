@@ -79,12 +79,14 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onBuyClick }) => {
           <button
             ref={buttonRef}
             onClick={onBuyClick}
-            className={`group relative bg-[#1a1f1b] hover:bg-[#1a1f1b]/90 text-[#f0e9d9] font-bold text-xl md:text-2xl py-6 px-12 rounded-full shadow-2xl transform transition-all duration-700 hover:scale-105 hover:shadow-3xl hover:-translate-y-1   overflow-hidden ${buttonVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-90"
+            className={`group relative bg-[#1a1f1b] hover:bg-[#1a1f1b]/90 text-[#f0e9d9] font-bold text-xl md:text-2xl py-6 px-12 rounded-full shadow-2xl shadow-[#ca6e3f]/40 hover:shadow-[#ca6e3f]/60 transform transition-all duration-700 hover:scale-105 hover:shadow-3xl hover:-translate-y-1 overflow-hidden ${buttonVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-90"
               }`}
           >
             <span className="relative z-10 flex items-center justify-center">
               Start My 14-Day Reset - $14
             </span>
+
+            {/* Shimmer effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#ca6e3f]/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
           </button>
 

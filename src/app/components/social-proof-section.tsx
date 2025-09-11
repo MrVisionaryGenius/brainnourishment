@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react"
 // Mock hook for demonstration - replace with your actual implementation
 const useScrollAnimation = (threshold = 0.1) => {
   const [isVisible, setIsVisible] = useState(false)
-  
+
   const ref = (node: Element | null) => {
     if (node) {
       const observer = new IntersectionObserver(
@@ -18,12 +18,12 @@ const useScrollAnimation = (threshold = 0.1) => {
         { threshold }
       )
       observer.observe(node)
-      
+
       // Cleanup function for the observer
       return () => observer.disconnect()
     }
   }
-  
+
   return { ref, isVisible }
 }
 
@@ -77,22 +77,19 @@ const SocialProofSection = () => {
   return (
     <section
       ref={sectionRef}
-      className={`py-20 bg-[#1a1f1b] transition-all duration-700 ease-out overflow-hidden ${
-        sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      }`}
+      className={`py-20 bg-[#1a1f1b] transition-all duration-700 ease-out overflow-hidden ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }`}
     >
       <div className="container mx-auto px-6 text-center mb-12">
         <h2
-          className={`text-3xl md:text-4xl font-bold mb-4 text-[#f0e9d9] transition-all duration-700 ease-out delay-200 ${
-            sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-          }`}
+          className={`text-3xl md:text-4xl font-bold mb-4 text-[#f0e9d9] transition-all duration-700 ease-out delay-200 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+            }`}
         >
           Why People are Joining.
         </h2>
         <p
-          className={`text-lg text-[#f0e9d9]/70 mb-12 transition-all duration-700 ease-out delay-300 ${
-            sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-          }`}
+          className={`text-lg text-[#f0e9d9]/70 mb-12 transition-all duration-700 ease-out delay-300 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+            }`}
         >
           See how others are planning to reclaim their time
         </p>
@@ -109,11 +106,11 @@ const SocialProofSection = () => {
               <div className="flex justify-center mb-4">
                 <div className="flex text-xl">⭐⭐⭐⭐⭐</div>
               </div>
-              
+
               <blockquote className="text-[#f1eada] mb-6 text-lg leading-relaxed italic min-h-[120px] flex items-center">
                 &quot;{testimonial.quote}&quot;
               </blockquote>
-              
+
               <div className="border-t border-[#ca6e3f]/20 pt-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#ca6e3f] to-[#ca6d41] rounded-full flex items-center justify-center text-white font-bold text-lg">
@@ -137,9 +134,8 @@ const SocialProofSection = () => {
       {/* Stats and CTA Section */}
       <div className="container mx-auto px-6 text-center">
         <div
-          className={`transition-all duration-700 ease-out delay-600 ${
-            sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-          }`}
+          className={`transition-all duration-700 ease-out delay-600 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+            }`}
         >
           <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-[#ca6e3f]/20 mb-8 max-w-2xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
@@ -156,14 +152,15 @@ const SocialProofSection = () => {
                 <div className="text-[#f0e9d9]/70 text-sm">Lives Changed</div>
               </div>
             </div>
-            
+
             <button
               onClick={handleCTAClick}
-              className="group bg-[#ca6e3f] text-white font-bold text-lg px-8 py-4 rounded-2xl hover:bg-[#ca6e3f]/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
+              className="group bg-[#ca6e3f] text-white font-bold text-lg px-8 py-4 rounded-2xl hover:bg-[#ca6e3f]/90 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#ca6e3f]/40 hover:shadow-[#ca6e3f]/60 hover:shadow-xl inline-flex items-center gap-2"
             >
               Join Them Today - Take The Test
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
+
           </div>
 
           {/* Live Counter */}
