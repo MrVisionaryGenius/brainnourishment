@@ -39,7 +39,7 @@ const App = () => {
       }, 2000)
       
       return () => clearTimeout(timer)
-    }
+    } 
   }, [age])
 
   // Timer-based exit pop-up (only after age is set)

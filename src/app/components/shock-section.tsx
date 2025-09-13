@@ -94,7 +94,7 @@ const ShockSection = () => {
               </div>
               <button
                 onClick={() => handleCTAClick('urgency')}
-                className="group bg-white/20 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/30 transition-all duration-300 border border-white/30 hover:border-white/50 inline-flex items-center gap-2"
+                className="group bg-white text-[#ca6e3f] font-semibold px-6 py-3 rounded-xl hover:bg-gray-50 transition-all duration-300 border border-white/30 hover:border-white/50 inline-flex items-center gap-2"
               >
                 Start Your Phone Detox Journey
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -125,7 +125,7 @@ const ShockSection = () => {
               {/* Social proof CTA in the success stat card */}
               <button
                 onClick={() => handleCTAClick('social_proof')}
-                className="group bg-green-500/20 text-white font-medium px-4 py-2 rounded-lg hover:bg-green-500/30 transition-all duration-300 border border-green-400/30 hover:border-green-400/50 text-sm inline-flex items-center gap-2 w-full justify-center"
+                className="group  bg-white text-[#ca6e3f] font-medium px-4 py-2 rounded-lg hover:bg-gray-50 transition-all duration-300 transform border border-green-400/30 hover:border-green-400/50 text-sm inline-flex items-center gap-2 w-full justify-center"
               >
                 <CheckCircle className="w-4 h-4" />
                 Join The 94%
@@ -154,13 +154,6 @@ const ShockSection = () => {
                 Take The Free 10-Second Test
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
-
-              {/* <button
-                onClick={() => handleCTAClick('secondary_final')}
-                className="group border-2 border-white/50 text-white font-semibold px-8 py-4 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:border-white/70"
-              >
-                Learn More About Our Method
-              </button> */}
             </div>
 
             <p className="text-white/70 text-sm mt-4">
