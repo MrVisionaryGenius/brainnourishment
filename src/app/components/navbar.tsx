@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X, Brain } from "lucide-react"
+import Image from "next/image"
 
 export function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,7 +14,13 @@ export function Navbar() {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-                        <Brain className="w-8 h-8 text-[#ca6e3f]" />
+                        <Image
+                            src="/logo.jpeg"
+                            alt="Logo"
+                            height={28}
+                            width={28}
+                            className="rounded-full"
+                        />
                         <span className="text-xl font-bold">Brain Nourishment</span>
                     </Link>
 

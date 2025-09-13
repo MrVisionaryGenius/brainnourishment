@@ -13,7 +13,7 @@ import AgeInputModal from "./components/age-input"
 import ExitModal from "./components/exit-modal"
 import TestimonialCarousel from "./components/testimonial-section"
 import SocialProofSection from "./components/social-proof-section"
-
+ 
 const App = () => {
   const [age, setAge] = useState<number | null>(null)
   const [isExitModalOpen, setIsExitModalOpen] = useState(false)
@@ -21,7 +21,7 @@ const App = () => {
 
   // Set your Gumroad or Whop product URL here
   // const WHOP_URL = "https://whop.com/brain-nourishment/14-day-phone-reset/"
-  const WHOP_URL = "https://whops.com/"
+  const WHOP_URL = "https://whop.com/checkout/plan_C5WP9a2Mp1FhC?d2c=true"
 
   // Load age from sessionStorage on component mount
   useEffect(() => {

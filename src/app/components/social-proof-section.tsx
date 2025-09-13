@@ -80,10 +80,6 @@ const testimonials = [
 const SocialProofSection = () => {
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation(0.1)
 
-  const handleCTAClick = () => {
-    console.log("Social proof CTA clicked")
-    // tracking/conversion logic
-  }
 
   return (
     <section
@@ -94,16 +90,16 @@ const SocialProofSection = () => {
       <div className="container mx-auto px-6 text-center mb-12">
         <h2
           className={`text-3xl md:text-4xl font-bold mb-4 text-[#f0e9d9] transition-all duration-700 ease-out delay-200 ${sectionVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-2"
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-2"
             }`}
         >
           Why People are Joining.
         </h2>
         <p
           className={`text-lg text-[#f0e9d9]/70 mb-12 transition-all duration-700 ease-out delay-300 ${sectionVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-2"
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-2"
             }`}
         >
           Real stories from people reclaiming their time and focus.
@@ -162,8 +158,8 @@ const SocialProofSection = () => {
       <div className="container mx-auto px-6 text-center">
         <div
           className={`transition-all duration-700 ease-out delay-600 ${sectionVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-2"
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-2"
             }`}
         >
           <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-[#ca6e3f]/20 mb-8 max-w-2xl mx-auto">
@@ -188,13 +184,14 @@ const SocialProofSection = () => {
               </div>
             </div>
 
-            <button
-              onClick={handleCTAClick}
-              className="group bg-[#ca6e3f] text-white font-bold text-lg px-8 py-4 rounded-2xl hover:bg-[#ca6e3f]/90 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#ca6e3f]/40 hover:shadow-[#ca6e3f]/60 hover:shadow-xl inline-flex items-center gap-2"
-            >
-              Join Them Today - Take The Test
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
+            <a href="/quiz">
+              <button
+                className="group bg-[#ca6e3f] text-white font-bold text-lg px-8 py-4 rounded-2xl hover:bg-[#ca6e3f]/90 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#ca6e3f]/40 hover:shadow-[#ca6e3f]/60 hover:shadow-xl inline-flex items-center gap-2"
+              >
+                Join Them Today - Take The Test
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </a>
           </div>
 
           {/* Live Counter */}

@@ -273,7 +273,7 @@ export function ResultsDisplay({ score, screenTimeData }: ResultsDisplayProps) {
 
                     <Button
                         className="w-full h-12 text-lg font-semibold bg-[#ca6e3f] hover:bg-[#ca6d41] text-white shadow-lg shadow-[#ca6e3f]/40 hover:shadow-[#ca6e3f]/60 hover:shadow-xl transition-all duration-300"
-                        onClick={() => window.open("https://your-challenge-link.com", "_blank")}
+                        onClick={() => window.open("https://whop.com/checkout/plan_C5WP9a2Mp1FhC?d2c=true", "_blank")}
                         disabled={timeLeft === 0}
                     >
                         {timeLeft > 0 ? "Join the 14-Day Challenge" : "Offer Expired"}
