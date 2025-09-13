@@ -57,7 +57,7 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
               Once they&apos;re gone, the offer closes.
             </p>
             <div className="mt-6 text-center">
-              <span className="text-2xl font-bold text-[#ca6e3f]">49 already joined</span>
+              <span className="text-2xl font-bold text-[#ca6e3f]">6 already joined</span>
             </div>
           </div>
         </div>

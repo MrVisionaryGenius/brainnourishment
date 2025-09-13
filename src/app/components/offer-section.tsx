@@ -154,7 +154,7 @@ const OfferSection: React.FC<OfferSectionProps> = ({ onBuyClick }) => {
               <div className="flex items-center justify-center space-x-4 text-sm text-[#1b201c]/60">
                 <div className="flex items-center">
                   <Users className="w-4 h-4 mr-1" />
-                  <span>47 joined today</span>
+                  <span>6 joined today</span>
                 </div>
                 <div className="w-2 h-2 bg-[#ca6e3f] rounded-full animate-pulse"></div>
                 <span>Secure checkout</span>
