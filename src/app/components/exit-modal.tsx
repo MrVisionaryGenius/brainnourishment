@@ -65,7 +65,7 @@ const ExitModal: React.FC<ExitModalProps> = ({ isOpen, onClose, onBuyClick }) =>
           {/* Trust indicators */}
           <div className="text-center mt-4">
             <p className="text-xs text-[#f1eada]/50">
-              Join 49+ others • 14-day guarantee
+              Join 6+ others • 14-day guarantee
             </p>
           </div>
         </div>

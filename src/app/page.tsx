@@ -21,7 +21,7 @@ const App = () => {
 
   // Set your Gumroad or Whop product URL here
   // const WHOP_URL = "https://whop.com/brain-nourishment/14-day-phone-reset/"
-  const WHOP_URL = "https://whop.com/checkout/plan_C5WP9a2Mp1FhC?d2c=true"
+  const WHOP_URL = "https://whop.com/checkout/plan_W5EqYxoadkQdR?d2c=true"
 
   // Load age from sessionStorage on component mount
   useEffect(() => {
