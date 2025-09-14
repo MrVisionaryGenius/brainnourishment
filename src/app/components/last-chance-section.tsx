@@ -51,7 +51,7 @@ const LastChanceSection: React.FC<LastChanceSectionProps> = ({ onBuyClick }) => 
               <span className="text-[#ca6e3f] font-semibold text-sm uppercase tracking-wider">Limited Launch Offer</span>
             </div>
             <p className="text-lg text-[#f1eada] font-medium leading-relaxed">
-              We&apos;re opening spots for our first 3,000 members at the launch price of{" "}
+              We&apos;re opening spots for our first 1500 members at the launch price of{" "}
               <span className="text-[#ca6e3f] font-bold">$14</span>{" "}
               <span className="text-[#f1eada]/70 line-through">(normally $49)</span>.
               Once they&apos;re gone, the offer closes.
