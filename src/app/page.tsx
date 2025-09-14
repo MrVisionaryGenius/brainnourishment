@@ -118,9 +118,10 @@ const App = () => {
         onBuyClick={handleBuyClick}
       />
 
-       <SocialProofSection />
 
-       <FourteenDayChallenge />
+      <FourteenDayChallenge />
+
+      <SocialProofSection />
 
       <ShockSection />
 
