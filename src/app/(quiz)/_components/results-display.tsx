@@ -9,11 +9,11 @@ import { AlertTriangle, AlertCircle, CheckCircle, Clock, Share2, Camera } from "
 import { AchievementBadges } from "./achievement-badges"
 import { ShareableCard } from "./shareable-card"
 
-declare global {
-    interface Window {
-        gtag?: (...args: any[]) => void;
-    }
-}
+// declare global {
+//     interface Window {
+//         gtag?: (...args: any[]) => void;
+//     }
+// }
 
 interface ResultsDisplayProps {
     score: number
@@ -36,15 +36,15 @@ export function ResultsDisplay({ score, screenTimeData }: ResultsDisplayProps) {
     const [timeLeft, setTimeLeft] = useState(5 * 60) // 5 minutes in seconds
     const [showShareCard, setShowShareCard] = useState(false)
 
-    const trackBuyClick = () => {
-        if (typeof window !== "undefined" && window.gtag) {
-            window.gtag('event', 'click', {
-                event_category: 'Purchase',
-                event_label: 'WHOP Checkout from Quiz Results',
-                value: 1
-            });
-        }
-    };
+    // const trackBuyClick = () => {
+    //     if (typeof window !== "undefined" && window.gtag) {
+    //         window.gtag('event', 'click', {
+    //             event_category: 'Purchase',
+    //             event_label: 'WHOP Checkout from Quiz Results',
+    //             value: 1
+    //         });
+    //     }
+    // };
 
 
     useEffect(() => {
@@ -291,7 +291,6 @@ export function ResultsDisplay({ score, screenTimeData }: ResultsDisplayProps) {
                     <Button
                         className="w-full h-12 text-lg font-semibold bg-[#ca6e3f] hover:bg-[#ca6d41] text-white shadow-lg shadow-[#ca6e3f]/40 hover:shadow-[#ca6e3f]/60 hover:shadow-xl transition-all duration-300"
                         onClick={() => {
-                            trackBuyClick(); // ✅ Send GA event
                             window.open("https://whop.com/checkout/plan_W5EqYxoadkQdR?d2c=true", "_blank"); // Open link
                         }}
                         disabled={timeLeft === 0}

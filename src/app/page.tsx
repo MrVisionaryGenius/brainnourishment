@@ -52,11 +52,11 @@ const App = () => {
   // ✅ Centralized Buy Click Handler with GA tracking
   const handleBuyClick = () => {
     // ✅ Send event to GA
-    (window as any).gtag('event', 'click', {
-      event_category: 'Purchase',
-      event_label: 'WHOP Checkout',
-      value: 1
-    });
+    // (window as any).gtag('event', 'click', {
+    //   event_category: 'Purchase',
+    //   event_label: 'WHOP Checkout',
+    //   value: 1
+    // });
 
     setTimeout(() => {
       window.location.href = WHOP_URL;
