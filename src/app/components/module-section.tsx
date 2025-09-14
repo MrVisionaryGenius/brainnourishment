@@ -1,8 +1,7 @@
 import React from 'react';
 import { CheckCircle, Shield, TrendingUp, Target, Settings, Lightbulb, Clock, User, Minus, Eye, Brain, Link, Calendar, Users, BookOpen, Gift, Star, PenTool } from 'lucide-react';
 
-
-const FourteenDayChallenge= () => {
+const FourteenDayChallenge = () => {
     const challenges = [
         {
             day: 1,
@@ -160,29 +159,31 @@ const FourteenDayChallenge= () => {
     ];
 
     return (
-        <section className="relative bg-gradient-to-br from-[#f1eada] via-[#f0e9d9] to-[#f1eada] py-20 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-[#f1eada] via-[#f0e9d9] to-[#f1eada] py-24 overflow-hidden">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#ca6e3f]/10 via-transparent to-[#ca6e3f]/5"></div>
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-6 relative z-10 max-w-7xl">
                 {/* Section Header */}
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1b201c] mb-6">
+                <div className="text-center mb-20">
+                    <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight">
                         Everything You Get <span className="text-[#ca6e3f]">Inside</span>
                     </h2>
-                    <p className="text-xl text-[#1b201c]/80 max-w-3xl mx-auto leading-relaxed mb-8">
+                    <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-12">
                         Reclaim your attention, one day at a time. Each day brings a new challenge designed to help you build a more intentional, focused life.
                     </p>
 
                     {/* Journaling Feature Highlight */}
-                    <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-[#ca6e3f]/20 max-w-2xl mx-auto mb-8">
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <BookOpen className="w-8 h-8 text-[#ca6e3f]" />
-                            <h3 className="text-2xl font-bold text-[#1b201c]">Includes Daily Journaling</h3>
+                    <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg max-w-3xl mx-auto mb-16">
+                        <div className="flex items-center justify-center gap-4 mb-6">
+                            <div className="p-3 bg-[#ca6e3f] rounded-full text-white">
+                                <BookOpen className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-3xl font-bold text-slate-900">Includes Daily Journaling</h3>
                         </div>
-                        <p className="text-[#1b201c]/80 leading-relaxed">
+                        <p className="text-slate-600 leading-relaxed text-lg">
                             Each day includes guided journaling prompts to help you reflect on your progress,
                             understand your relationship with technology, and build deeper self-awareness.
                         </p>
@@ -190,44 +191,49 @@ const FourteenDayChallenge= () => {
                 </div>
 
                 {/* Challenge Days */}
-                <div className="space-y-16">
+                <div className="space-y-20">
                     {challenges.map((challenge, index) => (
                         <div
                             key={challenge.day}
-                            className={`flex flex-col lg:flex-row items-center gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                            className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                                 }`}
                         >
                             {/* Content */}
-                            <div className="flex-1 lg:max-w-lg">
-                                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-[#ca6e3f]/10 hover:border-[#ca6e3f]/20 transition-all duration-300">
-                                    <div className="mb-6">
-                                        <div className="text-[#ca6e3f] font-bold text-lg">Day {challenge.day}</div>
-                                        <h3 className="text-2xl font-bold text-[#1b201c]">{challenge.title}</h3>
+                            <div className="flex-1 lg:max-w-2xl">
+                                <div className="bg-white rounded-2xl p-10 shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300">
+                                    <div className="mb-8">
+                                        <div className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-100 to-amber-100 text-orange-700 px-4 py-2 rounded-full font-semibold text-lg mb-4">
+                                            <span className="w-8 h-8 bg-[#ca6e3f] rounded-full flex items-center justify-center text-white text-sm font-bold">
+                                                {challenge.day}
+                                            </span>
+                                            Day {challenge.day}
+                                        </div>
+                                        <h3 className="text-3xl font-bold text-slate-900 leading-tight">{challenge.title}</h3>
                                     </div>
 
-                                    <p className="text-[#1b201c]/80 text-lg leading-relaxed mb-6">
+                                    <p className="text-slate-600 text-lg leading-relaxed mb-8">
                                         {challenge.description}
                                     </p>
 
-                                    <div className="bg-[#ca6e3f]/10 rounded-2xl p-4 border-l-4 border-[#ca6e3f] mb-4">
-                                        <div className="text-sm font-semibold text-[#ca6e3f] mb-1">Today&apos;s Challenge:</div>
-                                        <div className="text-[#1b201c] font-medium">{challenge.action}</div>
+                                    <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-6 border-l-4 border-orange-500 mb-6">
+                                        <div className="text-sm font-semibold text-orange-700 mb-2">Today&apos;s Challenge:</div>
+                                        <div className="text-slate-900 font-semibold text-lg">{challenge.action}</div>
                                     </div>
 
                                     {/* Journaling Prompt Indicator */}
-                                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4 border-l-4 border-blue-500">
-                                        <div className="flex items-center gap-2 mb-1">
-                                            <PenTool className="w-4 h-4 text-blue-600" />
-                                            <div className="text-sm font-semibold text-blue-600">Daily Journal Prompt:</div>
+                                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border-l-4 border-blue-500">
+                                        <div className="flex items-center gap-3 mb-2">
+                                            <PenTool className="w-5 h-5 text-blue-600" />
+                                            <div className="text-sm font-semibold text-blue-700">Daily Journal Prompt:</div>
                                         </div>
-                                        <div className="text-[#1b201c] text-sm">Guided reflection questions to deepen your understanding</div>
+                                        <div className="text-slate-700">Guided reflection questions to deepen your understanding</div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Image - Fixed to prevent cropping */}
-                            <div className="flex-1 lg:max-w-md">
-                                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                            {/* Image */}
+                            <div className="flex-1 lg:max-w-lg">
+                                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                                     <div className="aspect-[4/5] w-full">
                                         <img
                                             src={challenge.image}
@@ -235,9 +241,9 @@ const FourteenDayChallenge= () => {
                                             className="w-full h-full object-cover object-center"
                                             style={{ objectFit: 'cover' }}
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                                        <div className="absolute bottom-4 left-4">
-                                            <div className="text-white font-bold text-2xl drop-shadow-lg">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                                        <div className="absolute bottom-6 left-6">
+                                            <div className="text-white font-bold text-3xl drop-shadow-xl">
                                                 Day {String(challenge.day).padStart(2, '0')}
                                             </div>
                                         </div>
@@ -249,35 +255,35 @@ const FourteenDayChallenge= () => {
                 </div>
 
                 {/* Special Bonus Section */}
-                <div className="mt-24 mb-16">
-                    <div className="text-center mb-12">
-                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] text-white px-6 py-2 rounded-full font-semibold mb-4">
-                            <Gift className="w-5 h-5" />
+                <div className="mt-32 mb-20">
+                    <div className="text-center mb-16">
+                        <div className="inline-flex items-center gap-3 bg-[#ca6e3f] text-white px-8 py-3 rounded-full font-bold text-lg mb-6 shadow-lg">
+                            <Gift className="w-6 h-6" />
                             Special Launch Bonus
                         </div>
-                        <h3 className="text-4xl font-bold text-[#1b201c] mb-4">
+                        <h3 className="text-5xl font-bold text-slate-900 mb-6 tracking-tight">
                             Join Now & Get <span className="text-[#ca6e3f]">$184 in Bonuses</span>
                         </h3>
-                        <p className="text-xl text-[#1b201c]/80 max-w-2xl mx-auto">
+                        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                             Early supporters get exclusive access to premium resources that will accelerate your transformation
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {bonusFeatures.map((bonus, index) => (
-                            <div key={index} className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-[#ca6e3f]/10 hover:border-[#ca6e3f]/20 transition-all duration-300 hover:transform hover:scale-105">
-                                <div className="flex items-start gap-4">
-                                    <div className="bg-gradient-to-br from-[#ca6e3f] to-[#ca6d41] p-3 rounded-2xl text-white flex-shrink-0">
+                            <div key={index} className="bg-white rounded-2xl p-8 shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-[1.02]">
+                                <div className="flex items-start gap-6">
+                                    <div className="bg-[#ca6e3f] p-4 rounded-xl text-white flex-shrink-0 shadow-lg">
                                         {bonus.icon}
                                     </div>
                                     <div className="flex-1">
-                                        <div className="flex justify-between items-start mb-2">
-                                            <h4 className="text-xl font-bold text-[#1b201c]">{bonus.title}</h4>
-                                            <span className="text-[#ca6e3f] font-bold text-lg bg-[#ca6e3f]/10 px-3 py-1 rounded-full">
+                                        <div className="flex justify-between items-start mb-3">
+                                            <h4 className="text-2xl font-bold text-slate-900 leading-tight">{bonus.title}</h4>
+                                            <span className="text-[#ca6e3f] font-bold text-xl bg-orange-100 px-4 py-2 rounded-full whitespace-nowrap">
                                                 {bonus.value}
                                             </span>
                                         </div>
-                                        <p className="text-[#1b201c]/80 leading-relaxed">{bonus.description}</p>
+                                        <p className="text-slate-600 leading-relaxed text-lg">{bonus.description}</p>
                                     </div>
                                 </div>
                             </div>
@@ -286,22 +292,22 @@ const FourteenDayChallenge= () => {
                 </div>
 
                 {/* CTA Section */}
-                <div className="text-center mt-20">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-12 border border-[#ca6e3f]/10 max-w-4xl mx-auto">
-                        <h3 className="text-3xl font-bold text-[#1b201c] mb-4">
+                <div className="text-center mt-24">
+                    <div className="bg-white rounded-3xl p-12 border border-slate-200 shadow-2xl max-w-5xl mx-auto">
+                        <h3 className="text-4xl font-bold text-slate-900 mb-6 tracking-tight">
                             Ready to Start Your Transformation?
                         </h3>
-                        <p className="text-xl text-[#1b201c]/80 mb-6 leading-relaxed">
+                        <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-3xl mx-auto">
                             Join thousands who have already reclaimed their time and attention.
                             Your journey to a more focused, intentional life starts today.
                         </p>
 
                         {/* Value Stack */}
-                        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 mb-8 border border-green-200">
+                        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 mb-10 border border-green-200 max-w-2xl mx-auto">
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-[#1b201c] mb-2">Total Value: $233</div>
-                                <div className="text-lg text-green-700 font-semibold">Your Price Today: Only $14</div>
-                                <div className="text-sm text-[#1b201c]/60 mt-1">You Save $219 (94% Off)</div>
+                                <div className="text-3xl font-bold text-slate-900 mb-2">Total Value: $233</div>
+                                <div className="text-2xl text-green-700 font-bold">Your Price Today: Only $14</div>
+                                <div className="text-lg text-slate-500 mt-2">You Save $219 (94% Off)</div>
                             </div>
                         </div>
 
@@ -312,7 +318,7 @@ const FourteenDayChallenge= () => {
                                 Begin Your 14-Day Journey + Bonuses - $14
                             </button>
                         </a>
-                        <div className="text-sm text-[#1b201c]/60">
+                        <div className="text-slate-500 text-lg">
                             Limited time launch offer • Bonuses worth $184 included
                         </div>
                     </div>
