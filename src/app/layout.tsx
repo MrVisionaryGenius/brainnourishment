@@ -17,7 +17,34 @@ export const metadata: Metadata = {
   title: "Phone Freedom Challenge - Break Free from Digital Addiction",
   description:
     "Transform your life in 14 days. Join 15,000+ people who escaped phone addiction and reclaimed their time, focus, and freedom.",
+  keywords: ["phone addiction", "digital detox", "14 day challenge", "break phone addiction"],
+  openGraph: {
+    type: "website",
+    url: "https://www.brainnourishment.club",
+    title: "Phone Freedom Challenge - Break Free from Digital Addiction",
+    description:
+      "Transform your life in 14 days. Join 15,000+ people who escaped phone addiction and reclaimed their time, focus, and freedom.",
+    images: [
+      {
+        url: "https://www.brainnourishment.club/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Phone Freedom Challenge",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Phone Freedom Challenge - Break Free from Digital Addiction",
+    description:
+      "Transform your life in 14 days. Join 15,000+ people who escaped phone addiction and reclaimed their time, focus, and freedom.",
+    images: ["https://www.brainnourishment.club/og-image.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.brainnourishment.club",
+  },
 };
+
 
 export default function RootLayout({
   children,
