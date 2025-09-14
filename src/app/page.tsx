@@ -13,6 +13,7 @@ import AgeInputModal from "./components/age-input"
 import ExitModal from "./components/exit-modal"
 import TestimonialCarousel from "./components/testimonial-section"
 import SocialProofSection from "./components/social-proof-section"
+import FourteenDayChallenge from "./components/module-section"
 
 const App = () => {
   const [age, setAge] = useState<number | null>(null)
@@ -117,11 +118,14 @@ const App = () => {
         onBuyClick={handleBuyClick}
       />
 
+       <SocialProofSection />
+
+       <FourteenDayChallenge />
+
       <ShockSection />
 
       <OfferSection onBuyClick={handleBuyClick} />
 
-      <SocialProofSection />
 
       <TestimonialCarousel />
 

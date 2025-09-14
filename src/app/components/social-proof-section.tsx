@@ -84,7 +84,7 @@ const SocialProofSection = () => {
   return (
     <section
       ref={sectionRef}
-      className={`py-20 bg-[#1a1f1b] transition-all duration-700 ease-out overflow-hidden ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+      className={`py-20 bg-[#1a1f1b] rounded-4xl transition-all duration-700 ease-out overflow-hidden ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
     >
       <div className="container mx-auto px-6 text-center mb-12">
