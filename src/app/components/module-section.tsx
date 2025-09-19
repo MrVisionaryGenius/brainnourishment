@@ -166,7 +166,7 @@ const FourteenDayChallenge = () => {
             </div>
 
             <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-                {/* Section Header */}
+                {/* Section Header with Integrated Bonus */}
                 <div className="text-center mb-20">
                     <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight">
                         Everything You Get <span className="text-[#ca6e3f]">Inside</span>
@@ -175,19 +175,60 @@ const FourteenDayChallenge = () => {
                         Reclaim your attention, one day at a time. Each day brings a new challenge designed to help you build a more intentional, focused life.
                     </p>
 
-                    {/* Journaling Feature Highlight */}
-                    <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg max-w-3xl mx-auto mb-16">
-                        <div className="flex items-center justify-center gap-4 mb-6">
-                            <div className="p-3 bg-[#ca6e3f] rounded-full text-white">
-                                <BookOpen className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-3xl font-bold text-slate-900">Includes Daily Journaling</h3>
+                    {/* Integrated Bonus Highlight */}
+                    <div className="bg-gradient-to-r from-[#ca6e3f] to-[#d97845] rounded-3xl p-8 max-w-4xl mx-auto text-white shadow-2xl mb-16">
+                        <div className="flex items-center justify-center gap-3 mb-4">
+                            <Gift className="w-8 h-8" />
+                            <span className="bg-white/20 text-white px-4 py-2 rounded-full font-bold text-lg">
+                                Special Launch Bonus
+                            </span>
                         </div>
-                        <p className="text-slate-600 leading-relaxed text-lg">
-                            Each day includes guided journaling prompts to help you reflect on your progress,
-                            understand your relationship with technology, and build deeper self-awareness.
+                        <h3 className="text-4xl font-bold mb-4 tracking-tight">
+                            Get <span className="text-yellow-300">$184 Worth of Bonuses</span> FREE
+                        </h3>
+                        <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+                            Early supporters get exclusive access to premium resources that will accelerate your transformation
                         </p>
                     </div>
+                </div>
+
+                {/* Bonus Features Section */}
+                <div className="mb-20">
+
+                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        {bonusFeatures.map((bonus, index) => (
+                            <div key={index} className="bg-white rounded-2xl p-8 shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-[1.02]">
+                                <div className="flex items-start gap-6">
+                                    <div className="bg-[#ca6e3f] p-4 rounded-xl text-white flex-shrink-0 shadow-lg">
+                                        {bonus.icon}
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="flex justify-between items-start mb-3">
+                                            <h4 className="text-2xl font-bold text-slate-900 leading-tight">{bonus.title}</h4>
+                                            <span className="text-[#ca6e3f] font-bold text-xl bg-orange-100 px-4 py-2 rounded-full whitespace-nowrap">
+                                                {bonus.value}
+                                            </span>
+                                        </div>
+                                        <p className="text-slate-600 leading-relaxed text-lg">{bonus.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Journaling Feature Highlight */}
+                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg max-w-3xl mx-auto mb-16">
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                        <div className="p-3 bg-[#ca6e3f] rounded-full text-white">
+                            <BookOpen className="w-8 h-8" />
+                        </div>
+                        <h3 className="text-3xl font-bold text-slate-900">Includes Daily Journaling</h3>
+                    </div>
+                    <p className="text-slate-600 leading-relaxed text-lg">
+                        Each day includes guided journaling prompts to help you reflect on your progress,
+                        understand your relationship with technology, and build deeper self-awareness.
+                    </p>
                 </div>
 
                 {/* Challenge Days */}
@@ -252,43 +293,6 @@ const FourteenDayChallenge = () => {
                             </div>
                         </div>
                     ))}
-                </div>
-
-                {/* Special Bonus Section */}
-                <div className="mt-32 mb-20">
-                    <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-3 bg-[#ca6e3f] text-white px-8 py-3 rounded-full font-bold text-lg mb-6 shadow-lg">
-                            <Gift className="w-6 h-6" />
-                            Special Launch Bonus
-                        </div>
-                        <h3 className="text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-                            Join Now & Get <span className="text-[#ca6e3f]">$184 in Bonuses</span>
-                        </h3>
-                        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                            Early supporters get exclusive access to premium resources that will accelerate your transformation
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {bonusFeatures.map((bonus, index) => (
-                            <div key={index} className="bg-white rounded-2xl p-8 shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-[1.02]">
-                                <div className="flex items-start gap-6">
-                                    <div className="bg-[#ca6e3f] p-4 rounded-xl text-white flex-shrink-0 shadow-lg">
-                                        {bonus.icon}
-                                    </div>
-                                    <div className="flex-1">
-                                        <div className="flex justify-between items-start mb-3">
-                                            <h4 className="text-2xl font-bold text-slate-900 leading-tight">{bonus.title}</h4>
-                                            <span className="text-[#ca6e3f] font-bold text-xl bg-orange-100 px-4 py-2 rounded-full whitespace-nowrap">
-                                                {bonus.value}
-                                            </span>
-                                        </div>
-                                        <p className="text-slate-600 leading-relaxed text-lg">{bonus.description}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
                 </div>
 
                 {/* CTA Section */}
