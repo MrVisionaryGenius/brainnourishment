@@ -2,27 +2,90 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Trophy, Check, Skull } from "lucide-react"
-import { type Player, players } from "@/data/player"
+import { Trophy, Medal, Award, Star, User } from "lucide-react"
 
-// Create a type for players with required rank
-type PlayerWithRank = Player & { rank: number }
+// Mock player data - replace with your actual import
+const players = [
+  {
+    squidNumber: 1,
+    instagramName: "Dre",
+    totalHour: 11.17,
+    avgHour: 11.17,
+  },
+  {
+    squidNumber: 2,
+    instagramName: "Tade",
+    totalHour: 4.50,
+    avgHour: 3.10,
+  },
+  {
+    squidNumber: 3,
+    instagramName: "Tristan Neirynck",
+    avgHour: 7,
+    totalHour: 7,
+  },
+  {
+    squidNumber: 4,
+    instagramName: "Ramonda",
+    avgHour: 3.44,
+    totalHour: 4.40,
+  },
+  {
+    squidNumber: 5,
+    instagramName: "Jon",
+    totalHour: 5,
+    avgHour: 5,
+  },
+  {
+    squidNumber: 6,
+    instagramName: "Amy",
+    totalHour: 9.15,
+    avgHour: 9.15,
+  },
+  {
+    squidNumber: 7,
+    instagramName: "David Beard",
+    totalHour: 5,
+    avgHour: 5,
+  },
+]
+
+// Create a type for players with required rank and status
+type PlayerWithRank = typeof players[0] & { 
+  rank: number
+  status: string
+}
 
 const statusConfig = {
-  ACTIVE: {
-    bg: "bg-green-500/20 border-green-500/30",
-    text: "text-green-600",
-    icon: Check,
-  },
-  ELIMINATED: {
-    bg: "bg-gray-500/20 border-gray-500/30",
-    text: "text-gray-600",
-    icon: Skull,
-  },
   WINNER: {
-    bg: "bg-[#ca6e3f]/20 border-[#ca6e3f]/30",
-    text: "text-[#ca6e3f]",
+    bg: "bg-gradient-to-r from-green-400/20 to-green-600/20 border-green-500/40",
+    text: "text-green-600",
     icon: Trophy,
+    label: "🏆 DETOX CHAMPION"
+  },
+  SECOND: {
+    bg: "bg-gradient-to-r from-emerald-300/20 to-emerald-500/20 border-emerald-400/40",
+    text: "text-emerald-600",
+    icon: Medal,
+    label: "🥈 DETOX MASTER"
+  },
+  THIRD: {
+    bg: "bg-gradient-to-r from-teal-400/20 to-teal-600/20 border-teal-500/40",
+    text: "text-teal-600",
+    icon: Award,
+    label: "🥉 PHONE FREE"
+  },
+  "RUNNER UP": {
+    bg: "bg-gradient-to-r from-blue-400/20 to-blue-600/20 border-blue-500/40",
+    text: "text-blue-600",
+    icon: Star,
+    label: "⭐ GETTING BETTER"
+  },
+  PARTICIPANT: {
+    bg: "bg-gradient-to-r from-orange-200/20 to-orange-400/20 border-orange-300/40",
+    text: "text-orange-600",
+    icon: User,
+    label: "📱 NEEDS WORK"
   },
 }
 
@@ -30,24 +93,44 @@ export default function Leaderboard() {
   const [sortedPlayers, setSortedPlayers] = useState<PlayerWithRank[]>([])
 
   useEffect(() => {
-    // Calculate ranks and sort by rank
-    const playersWithRank: PlayerWithRank[] = players
+    // Sort players by average hours (ascending - lowest wins), then by total hours as tiebreaker
+    const playersWithRankAndStatus: PlayerWithRank[] = players
       .sort((a, b) => {
-        // Winners first, then by total hours (descending), then by avg hours (descending)
-        if (a.status === "WINNER" && b.status !== "WINNER") return -1
-        if (b.status === "WINNER" && a.status !== "WINNER") return 1
-        if (a.status === "ELIMINATED" && b.status !== "ELIMINATED") return 1
-        if (b.status === "ELIMINATED" && a.status !== "ELIMINATED") return -1
-
-        if (b.totalHour !== a.totalHour) return b.totalHour - a.totalHour
-        return b.avgHour - a.avgHour
+        const aAvgHour = a.avgHour ?? Infinity // High penalty for missing data
+        const bAvgHour = b.avgHour ?? Infinity
+        const aTotalHour = a.totalHour ?? Infinity
+        const bTotalHour = b.totalHour ?? Infinity
+        
+        // Primary sort: average hours (ascending - lowest wins!)
+        if (aAvgHour !== bAvgHour) return aAvgHour - bAvgHour
+        
+        // Tiebreaker: total hours (ascending - lowest wins!)
+        return aTotalHour - bTotalHour
       })
-      .map((player, index) => ({
-        ...player,
-        rank: index + 1,
-      }))
+      .map((player, index) => {
+        let status: string
+        
+        // Assign status based on ranking
+        if (index === 0) {
+          status = "WINNER"
+        } else if (index === 1) {
+          status = "SECOND"
+        } else if (index === 2) {
+          status = "THIRD"
+        } else if (index === 3) {
+          status = "RUNNER UP"
+        } else {
+          status = "PARTICIPANT"
+        }
 
-    setSortedPlayers(playersWithRank)
+        return {
+          ...player,
+          rank: index + 1,
+          status: status,
+        }
+      })
+
+    setSortedPlayers(playersWithRankAndStatus)
   }, [])
 
   return (
@@ -56,68 +139,80 @@ export default function Leaderboard() {
       <div className="hidden md:block bg-[#f1eada] backdrop-blur-sm rounded-2xl shadow-2xl border border-[#ca6e3f]/20 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-[#1a1f1b]">
+            <thead className="bg-gradient-to-r from-[#1a1f1b] to-[#2a2f2b]">
               <tr>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">Rank</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">Rank</th>
+                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
                   Squid#
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
                   Instagram Name
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
-                  Total Hours
-                </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
                   Avg Hours
                 </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
+                  Total Hours
+                </th>
+                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
                   Status
                 </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#ca6e3f]/20">
               {sortedPlayers.map((player, index) => {
-                const config = statusConfig[player.status]
+                const config = statusConfig[player.status as keyof typeof statusConfig]
                 const StatusIcon = config.icon
 
                 return (
                   <motion.tr
-                    key={player.squidNumber}
+                    key={`${player.squidNumber}-${index}`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                    className={`${config.bg} hover:bg-[#f0e9d9] transition-all duration-200 border-l-4 ${config.bg.includes("green") ? "border-l-green-500" : config.bg.includes("ca6e3f") ? "border-l-[#ca6e3f]" : "border-l-gray-500"}`}
+                    transition={{ delay: index * 0.08, type: "spring", stiffness: 100 }}
+                    className={`${config.bg} hover:bg-[#f0e9d9] transition-all duration-300 border-l-4 ${
+                      player.status === "WINNER" ? "border-l-green-500" :
+                      player.status === "SECOND" ? "border-l-emerald-400" :
+                      player.status === "THIRD" ? "border-l-teal-500" :
+                      player.status === "RUNNER UP" ? "border-l-blue-500" :
+                      "border-l-orange-300"
+                    } hover:shadow-lg`}
                   >
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-6 py-5 whitespace-nowrap">
                       <div className="flex items-center">
                         <span className="text-2xl font-bold text-[#1b201c]">#{player.rank}</span>
                         {player.rank <= 3 && (
-                          <Trophy
-                            className={`ml-2 h-5 w-5 ${player.rank === 1 ? "text-[#ca6e3f]" : player.rank === 2 ? "text-gray-500" : "text-amber-600"}`}
-                          />
+                          <div className="ml-3">
+                            {player.rank === 1 && <span className="text-2xl">🏆</span>}
+                            {player.rank === 2 && <span className="text-2xl">🥈</span>}
+                            {player.rank === 3 && <span className="text-2xl">🥉</span>}
+                          </div>
                         )}
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="text-lg font-mono font-bold text-[#1b201c]">
+                    <td className="px-6 py-5 whitespace-nowrap">
+                      <span className="text-lg font-mono font-bold text-[#1b201c] bg-[#1b201c]/10 px-3 py-1 rounded-full">
                         {String(player.squidNumber).padStart(3, "0")}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="text-lg font-medium text-[#1b201c]">@{player.instagramName}</span>
+                    <td className="px-6 py-5 whitespace-nowrap">
+                      <span className="text-lg font-semibold text-[#1b201c]">@{player.instagramName}</span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="text-lg font-semibold text-[#1b201c]">{player.totalHour.toFixed(1)}h</span>
+                    <td className="px-6 py-5 whitespace-nowrap">
+                      <span className="text-xl font-bold text-green-600 bg-green-100/50 px-3 py-1 rounded-lg">
+                        {player.avgHour ? `${player.avgHour.toFixed(1)}h` : "N/A"}
+                      </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="text-lg font-semibold text-[#1b201c]">{player.avgHour.toFixed(1)}h</span>
+                    <td className="px-6 py-5 whitespace-nowrap">
+                      <span className="text-lg font-semibold text-[#1b201c]">
+                        {player.totalHour ? `${player.totalHour.toFixed(1)}h` : "N/A"}
+                      </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="flex items-center space-x-2">
+                    <td className="px-6 py-5 whitespace-nowrap">
+                      <div className={`flex items-center space-x-2 ${config.bg} border ${config.bg} rounded-full px-4 py-2`}>
                         <StatusIcon className={`h-5 w-5 ${config.text}`} />
-                        <span className={`text-sm font-semibold ${config.text} uppercase tracking-wide`}>
-                          {player.status}
+                        <span className={`text-sm font-bold ${config.text} uppercase tracking-wide`}>
+                          {config.label}
                         </span>
                       </div>
                     </td>
@@ -132,53 +227,59 @@ export default function Leaderboard() {
       {/* Mobile Cards */}
       <div className="md:hidden space-y-4">
         {sortedPlayers.map((player, index) => {
-          const config = statusConfig[player.status]
+          const config = statusConfig[player.status as keyof typeof statusConfig]
           const StatusIcon = config.icon
 
           return (
             <motion.div
-              key={player.squidNumber}
+              key={`${player.squidNumber}-${index}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05 }}
-              className={`bg-[#f1eada] rounded-xl p-6 border border-[#ca6e3f]/20 backdrop-blur-sm shadow-lg`}
+              transition={{ delay: index * 0.08, type: "spring", stiffness: 100 }}
+              className={`${config.bg} rounded-xl p-6 border backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300`}
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-3">
-                  <span className="text-2xl font-bold text-[#1b201c]">#{player.rank}</span>
+                  <span className="text-3xl font-bold text-[#1b201c]">#{player.rank}</span>
                   {player.rank <= 3 && (
-                    <Trophy
-                      className={`ml-2 h-6 w-6 ${player.rank === 1 ? "text-[#ca6e3f]" : player.rank === 2 ? "text-gray-500" : "text-amber-600"}`}
-                    />
+                    <div>
+                      {player.rank === 1 && <span className="text-3xl">🏆</span>}
+                      {player.rank === 2 && <span className="text-3xl">🥈</span>}
+                      {player.rank === 3 && <span className="text-3xl">🥉</span>}
+                    </div>
                   )}
                 </div>
-                <div className="flex items-center space-x-2">
-                  <StatusIcon className={`h-5 w-5 ${config.text}`} />
-                  <span className={`text-sm font-semibold ${config.text} uppercase`}>{player.status}</span>
+                <div className={`flex items-center space-x-2 ${config.bg} border rounded-full px-3 py-1`}>
+                  <StatusIcon className={`h-4 w-4 ${config.text}`} />
+                  <span className={`text-xs font-bold ${config.text} uppercase`}>{config.label}</span>
                 </div>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-[#1b201c]/70 text-sm">Squid#</span>
-                  <span className="text-[#1b201c] font-mono font-bold">
+                  <span className="text-[#1b201c]/70 text-sm font-medium">Squid#</span>
+                  <span className="text-[#1b201c] font-mono font-bold bg-[#1b201c]/10 px-2 py-1 rounded">
                     {String(player.squidNumber).padStart(3, "0")}
                   </span>
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span className="text-[#1b201c]/70 text-sm">Instagram</span>
-                  <span className="text-[#1b201c] font-medium">@{player.instagramName}</span>
+                  <span className="text-[#1b201c]/70 text-sm font-medium">Instagram</span>
+                  <span className="text-[#1b201c] font-semibold">@{player.instagramName}</span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center">
-                    <div className="text-[#1b201c]/70 text-xs uppercase">Total Hours</div>
-                    <div className="text-[#1b201c] font-bold text-lg">{player.totalHour.toFixed(1)}h</div>
+                  <div className="text-center bg-green-100/50 rounded-lg p-3">
+                    <div className="text-[#1b201c]/70 text-xs uppercase font-bold">Avg Hours</div>
+                    <div className="text-green-600 font-bold text-xl">
+                      {player.avgHour ? `${player.avgHour.toFixed(1)}h` : "N/A"}
+                    </div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-[#1b201c]/70 text-xs uppercase">Avg Hours</div>
-                    <div className="text-[#1b201c] font-bold text-lg">{player.avgHour.toFixed(1)}h</div>
+                  <div className="text-center bg-[#1b201c]/10 rounded-lg p-3">
+                    <div className="text-[#1b201c]/70 text-xs uppercase font-bold">Total Hours</div>
+                    <div className="text-[#1b201c] font-bold text-xl">
+                      {player.totalHour ? `${player.totalHour.toFixed(1)}h` : "N/A"}
+                    </div>
                   </div>
                 </div>
               </div>
