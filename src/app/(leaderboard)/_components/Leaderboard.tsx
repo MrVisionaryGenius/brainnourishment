@@ -4,49 +4,85 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Trophy, Medal, Award, Star, User } from "lucide-react"
 
-// Mock player data - replace with your actual import
+// Player data with corrected calculations - 30.09.2025
 const players = [
   {
     squidNumber: 1,
     instagramName: "Dre",
     totalHour: 11.17,
-    avgHour: 11.17,
+    avgHour: 11.17 / 1, // 1 entry
   },
   {
     squidNumber: 2,
     instagramName: "Tade",
-    totalHour: 4.50,
-    avgHour: 3.10,
+    totalHour: 4.50 + 4.27 + 3.24, // = 12.01
+    avgHour: (4.50 + 4.27 + 3.24) / 3, // = 4.00
   },
   {
     squidNumber: 3,
     instagramName: "Tristan Neirynck",
-    avgHour: 7,
-    totalHour: 7,
+    totalHour: 7 + 7.5 + 10.5 + 9.25 + 8.50, // = 42.75
+    avgHour: (7 + 7.5 + 10.5 + 9.25 + 8.50) / 5, // = 8.55
   },
   {
     squidNumber: 4,
     instagramName: "Ramonda",
-    avgHour: 3.44,
-    totalHour: 4.40,
+    totalHour: 4.40 + 3.39, // = 7.79
+    avgHour: (4.40 + 3.39) / 2, // = 3.90
   },
   {
     squidNumber: 5,
     instagramName: "Jon",
     totalHour: 5,
-    avgHour: 5,
+    avgHour: 5 / 1, // 1 entry
   },
   {
     squidNumber: 6,
     instagramName: "Amy",
     totalHour: 9.15,
-    avgHour: 9.15,
+    avgHour: 9.15 / 1, // 1 entry
   },
   {
     squidNumber: 7,
     instagramName: "David Beard",
     totalHour: 5,
-    avgHour: 5,
+    avgHour: 5 / 1, // 1 entry
+  },
+  {
+    squidNumber: 8,
+    instagramName: "Greg",
+    totalHour: 4.5 + 4.25 + 4.50 + 4.50, // = 17.75
+    avgHour: (4.5 + 4.25 + 4.50 + 4.50) / 4, // = 4.44
+  },
+  {
+    squidNumber: 9,
+    instagramName: "Geden",
+    totalHour: 6 + 2 + 2.40 + 2 + 2, // = 14.40
+    avgHour: (6 + 2 + 2.40 + 2 + 2) / 5, // = 2.88
+  },
+  {
+    squidNumber: 10,
+    instagramName: "Gabriel Sheikh",
+    totalHour: 8.41,
+    avgHour: 8.41 / 1, // 1 entry
+  },
+  {
+    squidNumber: 11,
+    instagramName: "Ramonda",
+    totalHour: 6.14 + 4.36, // = 10.50
+    avgHour: (6.14 + 4.36) / 2, // = 5.25
+  },
+  {
+    squidNumber: 12,
+    instagramName: "Luke",
+    totalHour: 8 + 8.57, // = 16.57
+    avgHour: (8 + 8.57) / 2, // = 8.29
+  },
+  {
+    squidNumber: 13,
+    instagramName: "Gian",
+    totalHour: 6,
+    avgHour: 6 / 1, // 1 entry
   },
 ]
 
@@ -142,19 +178,19 @@ export default function Leaderboard() {
             <thead className="bg-gradient-to-r from-[#1a1f1b] to-[#2a2f2b]">
               <tr>
                 <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">Rank</th>
-                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
+                <th className="px-6 py-5 text-center text-sm font-bold text-white uppercase tracking-wider">
                   Squid#
                 </th>
-                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
-                  Instagram Name
+                <th className="px-6 py-5 text-center text-sm font-bold text-white uppercase tracking-wider">
+                  Name
                 </th>
-                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
+                <th className="px-6 py-5 text-center text-sm font-bold text-white uppercase tracking-wider">
                   Avg Hours
                 </th>
-                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
+                <th className="px-6 py-5 text-center text-sm font-bold text-white uppercase tracking-wider">
                   Total Hours
                 </th>
-                <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
+                <th className="px-6 py-5 text-center text-sm font-bold text-white uppercase tracking-wider">
                   Status
                 </th>
               </tr>
@@ -200,12 +236,12 @@ export default function Leaderboard() {
                     </td>
                     <td className="px-6 py-5 whitespace-nowrap">
                       <span className="text-xl font-bold text-green-600 bg-green-100/50 px-3 py-1 rounded-lg">
-                        {player.avgHour ? `${player.avgHour.toFixed(1)}h` : "N/A"}
+                        {player.avgHour ? `${player.avgHour.toFixed(2)}h` : "N/A"}
                       </span>
                     </td>
                     <td className="px-6 py-5 whitespace-nowrap">
                       <span className="text-lg font-semibold text-[#1b201c]">
-                        {player.totalHour ? `${player.totalHour.toFixed(1)}h` : "N/A"}
+                        {player.totalHour ? `${player.totalHour.toFixed(2)}h` : "N/A"}
                       </span>
                     </td>
                     <td className="px-6 py-5 whitespace-nowrap">
@@ -272,13 +308,13 @@ export default function Leaderboard() {
                   <div className="text-center bg-green-100/50 rounded-lg p-3">
                     <div className="text-[#1b201c]/70 text-xs uppercase font-bold">Avg Hours</div>
                     <div className="text-green-600 font-bold text-xl">
-                      {player.avgHour ? `${player.avgHour.toFixed(1)}h` : "N/A"}
+                      {player.avgHour ? `${player.avgHour.toFixed(2)}h` : "N/A"}
                     </div>
                   </div>
                   <div className="text-center bg-[#1b201c]/10 rounded-lg p-3">
                     <div className="text-[#1b201c]/70 text-xs uppercase font-bold">Total Hours</div>
                     <div className="text-[#1b201c] font-bold text-xl">
-                      {player.totalHour ? `${player.totalHour.toFixed(1)}h` : "N/A"}
+                      {player.totalHour ? `${player.totalHour.toFixed(2)}h` : "N/A"}
                     </div>
                   </div>
                 </div>
