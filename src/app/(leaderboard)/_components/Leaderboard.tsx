@@ -21,8 +21,8 @@ const players = [
   {
     squidNumber: 3,
     instagramName: "Tristan Neirynck",
-    totalHour: 7 + 7.5 + 10.5 + 9.25 + 8.50, // = 42.75
-    avgHour: (7 + 7.5 + 10.5 + 9.25 + 8.50) / 5, // = 8.55
+    totalHour: 7 + 7.5 + 10.5 + 9.25 + 8.50 + 7.45, // = 42.75
+    avgHour: (7 + 7.5 + 10.5 + 9.25 + 8.50 + 7.45) / 6, // = 8.55
   },
   {
     squidNumber: 4,
@@ -56,15 +56,15 @@ const players = [
   },
   {
     squidNumber: 9,
-    instagramName: "Geden",
-    totalHour: 6 + 2 + 2.40 + 2 + 2, // = 14.40
-    avgHour: (6 + 2 + 2.40 + 2 + 2) / 5, // = 2.88
+    instagramName: "Gedeon",
+    totalHour: 6 + 2 + 2.40 + 2 + 2 + 2.13, // = 14.40
+    avgHour: (6 + 2 + 2.40 + 2 + 2 + 2.13) / 6, // = 2.88
   },
   {
     squidNumber: 10,
     instagramName: "Gabriel Sheikh",
-    totalHour: 8.41,
-    avgHour: 8.41 / 1, // 1 entry
+    totalHour: 8.41 + 7.31,
+    avgHour: (8.41 + 7.31) / 2, // 1 entry
   },
   {
     squidNumber: 11,
@@ -83,6 +83,12 @@ const players = [
     instagramName: "Gian",
     totalHour: 6,
     avgHour: 6 / 1, // 1 entry
+  },
+  {
+    squidNumber: 14,
+    instagramName: "Charlie",
+    totalHour: 5.48,
+    avgHour: 5.48 / 1, // 1 entry
   },
 ]
 
