@@ -10,90 +10,89 @@ const players = [
     squidNumber: 1,
     instagramName: "Dre",
     totalHour: 11.17,
-    avgHour: 11.17 / 1, // 1 entry
+    avgHour: 11.17 / 1,
   },
   {
     squidNumber: 2,
     instagramName: "Tade",
-    totalHour: 4.50 + 4.27 + 3.24 + 4.25, // = 12.01
-    avgHour: (4.50 + 4.27 + 3.24 + 4.25) / 4, // = 4.00
+    totalHour: 4.50 + 4.27 + 3.24 + 4.25,
+    avgHour: (4.50 + 4.27 + 3.24 + 4.25) / 4,
   },
   {
     squidNumber: 3,
     instagramName: "Tristan Neirynck",
-    totalHour: 7 + 7.5 + 10.5 + 9.25 + 8.50 + 7.45 + 7.45, // = 42.75
-    avgHour: (7 + 7.5 + 10.5 + 9.25 + 8.50 + 7.45 + 7.45) / 7, // = 8.55
+    totalHour: 7 + 7.5 + 10.5 + 9.25 + 8.50 + 7.45 + 7.45 + 4.5 + 6 + 6.25,
+    avgHour: (7 + 7.5 + 10.5 + 9.25 + 8.50 + 7.45 + 7.45 + 4.5 + 6 + 6.25) / 10,
   },
   {
     squidNumber: 4,
     instagramName: "Ramonda",
-    totalHour: 4.40 + 3.39, // = 7.79
-    avgHour: (4.40 + 3.39) / 2, // = 3.90
+    totalHour: 4.40 + 3.39,
+    avgHour: (4.40 + 3.39) / 2,
   },
   {
     squidNumber: 5,
     instagramName: "Jon",
     totalHour: 5,
-    avgHour: 5 / 1, // 1 entry
+    avgHour: 5 / 1,
   },
   {
     squidNumber: 6,
     instagramName: "Amy",
     totalHour: 9.15,
-    avgHour: 9.15 / 1, // 1 entry
+    avgHour: 9.15 / 1,
   },
   {
     squidNumber: 7,
     instagramName: "David Beard",
     totalHour: 5,
-    avgHour: 5 / 1, // 1 entry
+    avgHour: 5 / 1,
   },
   {
     squidNumber: 8,
     instagramName: "Greg",
-    totalHour: 4.5 + 4.25 + 4.50 + 4.50, // = 17.75
-    avgHour: (4.5 + 4.25 + 4.50 + 4.50) / 4, // = 4.44
+    totalHour: 4.5 + 4.25 + 4.50 + 4.50 + 6 + 4.55,
+    avgHour: (4.5 + 4.25 + 4.50 + 4.50 + 6 + 4.55) / 6,
   },
   {
     squidNumber: 9,
     instagramName: "Gedeon",
-    totalHour: 6 + 2 + 2.40 + 2 + 2 + 2.13 + 3.3, // = 14.40
-    avgHour: (6 + 2 + 2.40 + 2 + 2 + 2.13 + 3.3) / 7, // = 2.88
+    totalHour: 6 + 2 + 2.40 + 2 + 2 + 2.13 + 3.3 + 3.22 + 3.45,
+    avgHour: (6 + 2 + 2.40 + 2 + 2 + 2.13 + 3.3 + 3.22 + 3.45) / 9,
   },
   {
     squidNumber: 10,
     instagramName: "Gabriel Sheikh",
-    totalHour: 8.41 + 7.31 + 8.42,
-    avgHour: (8.41 + 7.31 + 8.42) / 3, // 1 entry
+    totalHour: 8.41 + 7.31 + 8.42 + 8.0,
+    avgHour: (8.41 + 7.31 + 8.42 + 8.0) / 4,
   },
   {
     squidNumber: 11,
     instagramName: "Ramonda",
-    totalHour: 6.14 + 4.36, // = 10.50
-    avgHour: (6.14 + 4.36) / 2, // = 5.25
+    totalHour: 6.14 + 4.36,
+    avgHour: (6.14 + 4.36) / 2,
   },
   {
     squidNumber: 12,
     instagramName: "Luke",
-    totalHour: 8 + 8.57, // = 16.57
-    avgHour: (8 + 8.57) / 2, // = 8.29
+    totalHour: 8 + 8.57,
+    avgHour: (8 + 8.57) / 2,
   },
   {
     squidNumber: 13,
     instagramName: "Gian",
     totalHour: 6,
-    avgHour: 6 / 1, // 1 entry
+    avgHour: 6 / 1,
   },
   {
     squidNumber: 14,
     instagramName: "Charlie",
     totalHour: 5.48,
-    avgHour: 5.48 / 1, // 1 entry
+    avgHour: 5.48 / 1,
   },
 ]
-
 // Create a type for players with required rank and status
-type PlayerWithRank = typeof players[0] & { 
+type PlayerWithRank = typeof players[0] & {
   rank: number
   status: string
 }
@@ -142,16 +141,16 @@ export default function Leaderboard() {
         const bAvgHour = b.avgHour ?? Infinity
         const aTotalHour = a.totalHour ?? Infinity
         const bTotalHour = b.totalHour ?? Infinity
-        
+
         // Primary sort: average hours (ascending - lowest wins!)
         if (aAvgHour !== bAvgHour) return aAvgHour - bAvgHour
-        
+
         // Tiebreaker: total hours (ascending - lowest wins!)
         return aTotalHour - bTotalHour
       })
       .map((player, index) => {
         let status: string
-        
+
         // Assign status based on ranking
         if (index === 0) {
           status = "WINNER"
@@ -212,13 +211,12 @@ export default function Leaderboard() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.08, type: "spring", stiffness: 100 }}
-                    className={`${config.bg} hover:bg-[#f0e9d9] transition-all duration-300 border-l-4 ${
-                      player.status === "WINNER" ? "border-l-green-500" :
-                      player.status === "SECOND" ? "border-l-emerald-400" :
-                      player.status === "THIRD" ? "border-l-teal-500" :
-                      player.status === "RUNNER UP" ? "border-l-blue-500" :
-                      "border-l-orange-300"
-                    } hover:shadow-lg`}
+                    className={`${config.bg} hover:bg-[#f0e9d9] transition-all duration-300 border-l-4 ${player.status === "WINNER" ? "border-l-green-500" :
+                        player.status === "SECOND" ? "border-l-emerald-400" :
+                          player.status === "THIRD" ? "border-l-teal-500" :
+                            player.status === "RUNNER UP" ? "border-l-blue-500" :
+                              "border-l-orange-300"
+                      } hover:shadow-lg`}
                   >
                     <td className="px-6 py-5 whitespace-nowrap">
                       <div className="flex items-center">
