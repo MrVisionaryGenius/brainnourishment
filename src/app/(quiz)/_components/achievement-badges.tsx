@@ -9,38 +9,38 @@ interface AchievementBadgesProps {
 export function AchievementBadges({ score }: AchievementBadgesProps) {
   const badges = [
     {
+      id: "audit-complete",
+      title: "Audit Complete",
+      description: "Finished the full AI skills assessment",
+      icon: "✅",
+      earned: true,
+    },
+    {
       id: "self-aware",
-      title: "Self-Aware",
-      description: "Completed the phone addiction assessment",
+      title: "Self-Aware Builder",
+      description: "Knows exactly where the gaps are",
       icon: "🧠",
       earned: true,
     },
     {
-      id: "honest",
-      title: "Brutally Honest",
-      description: "Answered all questions truthfully",
-      icon: "💯",
-      earned: true,
-    },
-    {
-      id: "wellness-seeker",
-      title: "Wellness Seeker",
-      description: "Taking steps toward digital wellness",
-      icon: "🌱",
+      id: "advanced-operator",
+      title: "Advanced Operator",
+      description: "AI is deeply embedded in your workflow",
+      icon: "🎯",
       earned: score <= 16,
     },
     {
-      id: "change-maker",
-      title: "Change Maker",
-      description: "Ready to transform digital habits",
-      icon: "🔄",
-      earned: score >= 17,
+      id: "systems-builder",
+      title: "Systems Builder",
+      description: "Ready to build a real AI stack",
+      icon: "🔧",
+      earned: score >= 17 && score < 24,
     },
     {
-      id: "warrior",
-      title: "Digital Warrior",
-      description: "Fighting against phone addiction",
-      icon: "⚔️",
+      id: "high-upside",
+      title: "High Upside",
+      description: "Biggest gains still ahead of you",
+      icon: "🚀",
       earned: score >= 24,
     },
   ]
@@ -48,29 +48,26 @@ export function AchievementBadges({ score }: AchievementBadgesProps) {
   const earnedBadges = badges.filter((badge) => badge.earned)
 
   return (
-    <Card className="p-6 bg-gradient-to-r from-[#f1eada] to-[#f0e9d9] border-[#ca6e3f]/30">
-      <h3 className="text-lg font-semibold text-[#1b201c] mb-4 flex items-center">
-        <span className="text-2xl mr-2">🏆</span>
-        Your Achievement Badges
+    <Card className="p-6 bg-[#0f1010] border-white/10">
+      <h3 className="text-xs font-semibold text-[#f97316] mb-4 flex items-center uppercase tracking-widest">
+        <span className="mr-2">🏆</span>
+        Your Badges
       </h3>
-
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {earnedBadges.map((badge) => (
           <div
             key={badge.id}
-            className="bg-white rounded-lg p-3 text-center shadow-sm border border-[#ca6e3f]/20 hover:shadow-md transition-shadow"
+            className="bg-[#1a1f1b] rounded-lg p-3 text-center border border-white/10 hover:border-[#f97316]/40 transition-colors"
           >
-            <div className="text-2xl mb-1">{badge.icon}</div>
-            <div className="text-sm font-semibold text-[#1b201c]">{badge.title}</div>
-            <div className="text-xs text-[#1b201c] opacity-70 mt-1">{badge.description}</div>
+            <div className="text-xl mb-1">{badge.icon}</div>
+            <div className="text-xs font-semibold text-white">{badge.title}</div>
+            <div className="text-xs text-gray-500 mt-1">{badge.description}</div>
           </div>
         ))}
       </div>
-
       <div className="mt-4 text-center">
-        <p className="text-sm text-[#1b201c] opacity-80">
-          You&apos;ve earned <span className="font-semibold text-[#ca6e3f]">{earnedBadges.length}</span> out of{" "}
-          {badges.length} badges!
+        <p className="text-xs text-gray-600">
+          <span className="text-[#f97316] font-semibold">{earnedBadges.length}</span> of {badges.length} badges earned
         </p>
       </div>
     </Card>

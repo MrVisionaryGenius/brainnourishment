@@ -12,39 +12,38 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Brain Nourishment Quiz - Discover How Much Life You're Losing to Screens",
+    title: "The AI Operator — Are You Actually in Control of Your Attention?",
     description:
-        "Take our eye-opening quiz to discover how many years of your precious life you're spending on social media and screens. Get personalized insights and reclaim your time for what truly matters.",
+        "Builders who can't control their screen time can't control their output. Take this 2-minute assessment to find out how much of your focus is being stolen — and what to do about it.",
     keywords:
-        "brain health, screen time, social media addiction, digital wellness, time management, life optimization, phone addiction test",
+        "AI productivity, screen time, attention management, digital focus, builder habits, phone addiction, deep work, dopamine detox, operator mindset",
     openGraph: {
-        title: "Brain Nourishment Quiz - Discover How Much Life You're Losing to Screens",
+        title: "The AI Operator — Are You Actually in Control of Your Attention?",
         description:
-            "Shocking reality: 5 hours of daily screen time = 12.5 years of your life. Take our quiz to see your personal impact and learn how to reclaim your time.",
+            "5 hours of daily scrolling = 12.5 years of your life. As a builder, your attention is your most valuable asset. Find out how much you're leaking.",
         type: "website",
         images: [
             {
-                url: "/brain-nourishment-quiz-share.png",
+                url: "/ai-operator-quiz-share.png",
                 width: 1200,
                 height: 630,
-                alt: "Brain Nourishment Quiz - Discover Your Screen Time Impact",
+                alt: "The AI Operator Attention Audit",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Brain Nourishment Quiz - How Much Life Are You Losing to Screens?",
+        title: "The AI Operator — How Much of Your Attention Is Being Stolen?",
         description:
-            "I just discovered I'm spending X years of my life on screens! Take this eye-opening quiz to see your impact.",
-        images: ["/brain-nourishment-quiz-twitter-card.png"],
+            "I just audited my screen habits. The numbers are shocking. Take the Attention Audit yourself.",
+        images: ["/ai-operator-quiz-twitter-card.png"],
     },
     robots: {
         index: true,
         follow: true,
     },
     viewport: "width=device-width, initial-scale=1",
-}
-
+};
 
 export default function RootLayout({
     children,
@@ -53,9 +52,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                 {children}
             </body>
         </html>

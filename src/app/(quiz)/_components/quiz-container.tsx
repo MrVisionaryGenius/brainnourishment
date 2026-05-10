@@ -7,144 +7,151 @@ import { Card } from "@/components/ui/card"
 interface Question {
     id: number
     text: string
+    category: string
     options: {
         text: string
         points: number
-        screenTimeHours?: number // For calculating lifetime impact
+        hoursLost?: number
     }[]
 }
 
 const questions: Question[] = [
     {
         id: 1,
-        text: "How often do you check your phone within 5 minutes of waking up?",
+        category: "AI Awareness",
+        text: "How would you honestly describe your current use of AI tools in your daily work?",
         options: [
-            { text: "Always", points: 3 },
-            { text: "Often", points: 2 },
-            { text: "Rarely", points: 1 },
+            { text: "I barely use them — still figuring out where to start", points: 3 },
+            { text: "I use ChatGPT occasionally but have no real system", points: 2 },
+            { text: "I have a consistent AI workflow that saves me hours weekly", points: 1 },
         ],
     },
     {
         id: 2,
-        text: "Do you feel restless when you can't check your phone for 30 minutes?",
+        category: "Automation",
+        text: "How many hours per week do you spend on repetitive tasks you know could be automated?",
         options: [
-            { text: "Yes", points: 3 },
-            { text: "Sometimes", points: 2 },
-            { text: "No", points: 1 },
+            { text: "10+ hours — I'm basically a human copy-paste machine", points: 3, hoursLost: 10 },
+            { text: "3–10 hours — I know it's a problem but haven't fixed it", points: 2, hoursLost: 6 },
+            { text: "Under 3 hours — most of my repetitive work is automated", points: 1, hoursLost: 2 },
         ],
     },
     {
         id: 3,
-        text: "How often do you lose track of time while scrolling?",
+        category: "Prompting Skills",
+        text: "When you use an AI tool and get a bad output, what do you usually do?",
         options: [
-            { text: "Daily", points: 3 },
-            { text: "Weekly", points: 2 },
-            { text: "Rarely", points: 1 },
+            { text: "Give up and do it manually — prompting feels like guesswork", points: 3 },
+            { text: "Try rephrasing once or twice and hope for the best", points: 2 },
+            { text: "I have a structured prompting approach that gets consistent results", points: 1 },
         ],
     },
     {
         id: 4,
-        text: "Have you skipped tasks, meals, or sleep because of your phone?",
+        category: "Earning Potential",
+        text: "Are you actively using AI to earn more — whether in your business, freelance work, or side income?",
         options: [
-            { text: "Yes", points: 3 },
-            { text: "Sometimes", points: 2 },
-            { text: "No", points: 1 },
+            { text: "No — I haven't figured out how to monetise it yet", points: 3 },
+            { text: "Somewhat — I've saved time but haven't translated that into more money", points: 2 },
+            { text: "Yes — AI directly contributes to my income", points: 1 },
         ],
     },
     {
         id: 5,
-        text: "Do you open your phone without knowing why?",
+        category: "Keeping Up",
+        text: "How do you currently stay updated on new AI tools and workflows?",
         options: [
-            { text: "All the time", points: 3 },
-            { text: "Sometimes", points: 2 },
-            { text: "Rarely", points: 1 },
+            { text: "Random Twitter/LinkedIn posts — very hit or miss", points: 3 },
+            { text: "A few YouTube channels or newsletters but nothing consistent", points: 2 },
+            { text: "I have a reliable, curated source that gives me actionable intel weekly", points: 1 },
         ],
     },
     {
         id: 6,
-        text: "Do you ever feel anxious if your battery is below 20%?",
+        category: "Time & Output",
+        text: "How long does it typically take you to produce a solid first draft — whether that's content, a proposal, code, or a plan?",
         options: [
-            { text: "Yes", points: 3 },
-            { text: "Sometimes", points: 2 },
-            { text: "No", points: 1 },
+            { text: "Hours — I mostly do everything from scratch manually", points: 3 },
+            { text: "30–90 minutes — I use some AI but the process is still slow", points: 2 },
+            { text: "Under 30 minutes — AI compresses my drafting time dramatically", points: 1 },
         ],
     },
     {
         id: 7,
-        text: "How many hours do you spend on social media daily?",
+        category: "Weekly Hours Lost",
+        text: "Roughly how many hours per week do you estimate you're losing to inefficiency — tasks that AI could handle faster or better?",
         options: [
-            { text: "4+ hours", points: 3, screenTimeHours: 5 },
-            { text: "2-4 hours", points: 2, screenTimeHours: 3 },
-            { text: "Less than 2 hours", points: 1, screenTimeHours: 1 },
+            { text: "15+ hours — a huge chunk of my week", points: 3, hoursLost: 15 },
+            { text: "5–15 hours — noticeable but manageable", points: 2, hoursLost: 10 },
+            { text: "Under 5 hours — I run a tight, AI-assisted operation", points: 1, hoursLost: 3 },
         ],
     },
     {
         id: 8,
-        text: "What's your total daily screen time (including all apps)?",
+        category: "AI Stack",
+        text: "How would you describe your current AI tool stack?",
         options: [
-            { text: "8+ hours", points: 3, screenTimeHours: 9 },
-            { text: "5-8 hours", points: 2, screenTimeHours: 6.5 },
-            { text: "Less than 5 hours", points: 1, screenTimeHours: 3.5 },
+            { text: "I don't really have one — I just use whatever I hear about", points: 3, hoursLost: 12 },
+            { text: "A few tools I use regularly but no real system connecting them", points: 2, hoursLost: 7 },
+            { text: "A deliberate, connected stack optimised for my specific workflow", points: 1, hoursLost: 2 },
         ],
     },
     {
         id: 9,
-        text: "Have you tried deleting apps to focus but reinstalled them soon after?",
+        category: "Implementation",
+        text: "When you read about a useful AI tool or automation, what usually happens next?",
         options: [
-            { text: "Yes", points: 3 },
-            { text: "Once or twice", points: 2 },
-            { text: "Never", points: 1 },
+            { text: "I bookmark it and never actually implement it", points: 3 },
+            { text: "I try it once but rarely build it into my regular workflow", points: 2 },
+            { text: "I test it quickly and integrate it if it saves meaningful time", points: 1 },
         ],
     },
     {
         id: 10,
-        text: "Do you feel phone use affects your relationships?",
+        category: "Builder Mindset",
+        text: "If you could get one practical, no-fluff AI tool or automation dropped in your inbox twice a week — would that move the needle for you?",
         options: [
-            { text: "Yes, badly", points: 3 },
-            { text: "Somewhat", points: 2 },
-            { text: "Not really", points: 1 },
+            { text: "100% yes — that's exactly what I've been looking for", points: 3 },
+            { text: "Probably — depends on how actionable it actually is", points: 2 },
+            { text: "Maybe — I already have good sources but always open to better", points: 1 },
         ],
     },
 ]
 
 interface QuizContainerProps {
-    onComplete: (score: number, screenTimeData: { socialMedia: number; totalScreen: number }) => void
+    onComplete: (score: number, efficiencyData: { weeklyHoursLost: number; annualHoursLost: number }) => void
     onProgress: (currentQuestion: number) => void
 }
 
 export function QuizContainer({ onComplete, onProgress }: QuizContainerProps) {
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [score, setScore] = useState(0)
-    const [screenTimeData, setScreenTimeData] = useState({ socialMedia: 0, totalScreen: 0 })
+    const [totalHoursLost, setTotalHoursLost] = useState(0)
     const [isAnimating, setIsAnimating] = useState(false)
 
-    const handleAnswer = (points: number, screenTimeHours?: number) => {
+    const handleAnswer = (points: number, hoursLost?: number) => {
         if (isAnimating) return
 
         setIsAnimating(true)
-        setScore((prev) => prev + points)
+        const newScore = score + points
+        setScore(newScore)
 
-        // Track screen time data for quantification
-        if (screenTimeHours) {
-            const question = questions[currentQuestion]
-            if (question.id === 7) {
-                // Social media question
-                setScreenTimeData((prev) => ({ ...prev, socialMedia: screenTimeHours }))
-            } else if (question.id === 8) {
-                // Total screen time question
-                setScreenTimeData((prev) => ({ ...prev, totalScreen: screenTimeHours }))
-            }
+        if (hoursLost) {
+            setTotalHoursLost((prev) => prev + hoursLost)
         }
 
         setTimeout(() => {
             const nextQuestion = currentQuestion + 1
-
             if (nextQuestion < questions.length) {
                 setCurrentQuestion(nextQuestion)
                 onProgress(nextQuestion)
                 setIsAnimating(false)
             } else {
-                onComplete(score + points, screenTimeData)
+                const weeklyHoursLost = Math.round(totalHoursLost / 2)
+                onComplete(newScore, {
+                    weeklyHoursLost,
+                    annualHoursLost: weeklyHoursLost * 52,
+                })
             }
         }, 300)
     }
@@ -154,15 +161,15 @@ export function QuizContainer({ onComplete, onProgress }: QuizContainerProps) {
     return (
         <div className="space-y-4">
             <div className="text-center">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#ca6e3f] text-white mb-3">
-                    Question {currentQuestion + 1} of {questions.length}
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 mb-3 uppercase tracking-widest">
+                    {question.category} · {currentQuestion + 1} of {questions.length}
                 </span>
             </div>
 
             <Card
-                className={`p-4 md:p-6 transition-all duration-300 bg-white border-[#ca6e3f]/20 ${isAnimating ? "opacity-50 scale-95" : "opacity-100 scale-100"}`}
+                className={`p-4 md:p-6 transition-all duration-300 bg-[#0f1010] border-white/10 ${isAnimating ? "opacity-50 scale-95" : "opacity-100 scale-100"}`}
             >
-                <h2 className="text-lg md:text-xl font-semibold text-[#1b201c] mb-4 md:mb-6 leading-relaxed">
+                <h2 className="text-lg md:text-xl font-semibold text-white mb-4 md:mb-6 leading-relaxed">
                     {question.text}
                 </h2>
 
@@ -171,8 +178,8 @@ export function QuizContainer({ onComplete, onProgress }: QuizContainerProps) {
                         <Button
                             key={index}
                             variant="outline"
-                            className="w-full p-3 md:p-4 h-auto text-left justify-start hover:bg-[#ca6e3f] hover:text-white hover:border-[#ca6e3f] transition-all duration-200 bg-transparent text-[#1b201c] border-[#ca6e3f]/30 text-sm md:text-base"
-                            onClick={() => handleAnswer(option.points, option.screenTimeHours)}
+                            className="w-full p-3 md:p-4 h-auto text-left justify-start hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all duration-200 bg-transparent text-gray-300 border-white/15 text-sm md:text-base"
+                            onClick={() => handleAnswer(option.points, option.hoursLost)}
                             disabled={isAnimating}
                         >
                             <span>{option.text}</span>
@@ -182,14 +189,14 @@ export function QuizContainer({ onComplete, onProgress }: QuizContainerProps) {
             </Card>
 
             {(question.id === 7 || question.id === 8) && (
-                <Card className="p-4 bg-gradient-to-r from-[#f1eada] to-[#f0e9d9] border-[#ca6e3f]/30">
+                <Card className="p-4 bg-[#f97316]/5 border-[#f97316]/20">
                     <div className="text-center">
-                        <div className="text-2xl mb-2">⏰</div>
-                        <h3 className="font-semibold text-[#1b201c] mb-2">Did You Know?</h3>
-                        <p className="text-sm text-[#1b201c] opacity-80">
+                        <div className="text-xl mb-2">⚡</div>
+                        <h3 className="font-semibold text-white mb-1 text-xs uppercase tracking-widest">Operator Insight</h3>
+                        <p className="text-sm text-gray-400">
                             {question.id === 7
-                                ? "3 hours on social media daily = 9 years of your life spent scrolling!"
-                                : "8 hours of daily screen time = 24 years of your life looking at screens!"}
+                                ? "15 hrs/week lost to inefficiency = 780 hours a year. That's nearly 5 months of full-time work given away for free."
+                                : "Builders with a deliberate AI stack report saving 10–20 hrs/week. That's time you could spend building, selling, or sleeping."}
                         </p>
                     </div>
                 </Card>

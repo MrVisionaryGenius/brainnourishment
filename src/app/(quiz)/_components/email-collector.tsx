@@ -1,12 +1,11 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
-import { Mail, Loader2 } from "lucide-react"
+import { Loader2 } from "lucide-react"
 
 interface EmailCollectorProps {
   onSubmitted: () => void
@@ -17,25 +16,18 @@ export function EmailCollector({ onSubmitted }: EmailCollectorProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState("")
 
-  const validateEmail = (email: string) => {
-    return /\S+@\S+\.\S+/.test(email)
-  }
+  const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
     if (isSubmitting) return
-
     if (!email.trim() || !validateEmail(email)) {
       setError("Please enter a valid email address")
       return
     }
-
     setError("")
     setIsSubmitting(true)
-
     try {
-      // Send email to Google Sheets
       await fetch(
         "https://script.google.com/macros/s/AKfycbyNVQNJvOJAsfrqoTy-V2SfHdWrWen-_cILCe_3Dv4-EDNLlrTqoeJ47K1N_HUQK6wDmw/exec",
         {
@@ -45,10 +37,9 @@ export function EmailCollector({ onSubmitted }: EmailCollectorProps) {
           body: JSON.stringify({ email: email.trim() }),
         },
       )
-
       onSubmitted()
-    } catch (error) {
-      console.error("Error:", error)
+    } catch (err) {
+      console.error("Error:", err)
       setError("Something went wrong. Please try again.")
     } finally {
       setIsSubmitting(false)
@@ -56,51 +47,74 @@ export function EmailCollector({ onSubmitted }: EmailCollectorProps) {
   }
 
   return (
-    <div className="text-center space-y-6">
-      <div className="inline-flex items-center justify-center w-16 h-16 bg-[#ca6e3f]/10 rounded-full mb-4 border-2 border-[#ca6e3f]">
-        <Mail className="w-8 h-8 text-[#ca6e3f]" />
+    <div className="text-center space-y-6 py-2">
+
+      {/* Icon */}
+      <div className="inline-flex items-center justify-center w-16 h-16 bg-[#f97316]/10 rounded-full border-2 border-[#f97316]">
+        <span className="text-2xl">⚡</span>
       </div>
 
+      {/* Headline */}
       <div>
-        <h2 className="text-2xl font-bold text-[#1b201c] mb-3">Get Your Results & Free Detox Tips</h2>
-        <p className="text-[#1b201c] opacity-80 mb-6">
-          Enter your email to see your personalized results and receive science-backed tips to reduce phone addiction.
+        <div className="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/30 rounded-full px-4 py-1 mb-3">
+          <span className="text-[#f97316] text-xs font-semibold uppercase tracking-widest">Your results are ready</span>
+        </div>
+        <h2 className="text-2xl font-bold text-white mb-3">
+          One last step — where should we send them?
+        </h2>
+        <p className="text-gray-400 text-sm max-w-sm mx-auto leading-relaxed">
+          Drop your email below to unlock your full results. You&apos;ll also get added to{" "}
+          <span className="text-[#f97316] font-medium">The AI Operator</span> — our free Substack where we send practical AI tools,
+          prompts, and automations every Tuesday & Thursday. No fluff, no theory. Just stuff that works.
         </p>
       </div>
 
-      <Card className="p-6 bg-white border-[#ca6e3f]/20">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <Input
-              type="email"
-              placeholder="Enter your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="text-center text-lg h-12 border-[#ca6e3f]/30 focus:border-[#ca6e3f] text-[#1b201c]"
-              disabled={isSubmitting}
-            />
-            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+      {/* What you're getting */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+        {[
+          { icon: "📬", label: "2x per week", desc: "Every Tue & Thu" },
+          { icon: "🔧", label: "Practical only", desc: "Tools you can use today" },
+          { icon: "🚫", label: "Zero fluff", desc: "No hype, no theory" },
+        ].map((item) => (
+          <div key={item.label} className="bg-[#0f1010] rounded-lg p-3 border border-white/10 text-center">
+            <div className="text-xl mb-1">{item.icon}</div>
+            <div className="text-xs font-semibold text-white">{item.label}</div>
+            <div className="text-xs text-gray-500">{item.desc}</div>
           </div>
+        ))}
+      </div>
 
+      {/* Form */}
+      <Card className="p-6 bg-[#0f1010] border-white/10">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <Input
+            type="email"
+            placeholder="your@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="text-center text-base h-12 bg-[#1a1f1b] border-white/20 focus:border-[#f97316] text-white placeholder:text-gray-600"
+            disabled={isSubmitting}
+          />
+          {error && <p className="text-red-400 text-xs">{error}</p>}
           <Button
             type="submit"
-            className="w-full h-12 text-lg font-semibold bg-[#ca6e3f] hover:bg-[#ca6d41] text-white"
+            className="w-full h-12 text-base font-semibold bg-[#f97316] hover:bg-[#ea6c0a] text-white"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
               <>
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                Processing...
+                Sending...
               </>
             ) : (
-              "See My Results"
+              "Show My Results & Join the Newsletter →"
             )}
           </Button>
         </form>
       </Card>
 
-      <p className="text-sm text-[#1b201c] opacity-70">
-        We respect your privacy. Your email will only be used to send you your results and helpful tips.
+      <p className="text-xs text-gray-600">
+        Free forever. Unsubscribe anytime. We respect your inbox — we hate spam as much as you do.
       </p>
     </div>
   )

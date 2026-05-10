@@ -32,12 +32,12 @@ export function Navbar() {
                         <Link href="/quiz" className="hover:text-[#ca6e3f] transition-colors">
                             Take Quiz
                         </Link>
-                        <Link href="/leaderboard" className="hover:text-[#ca6e3f] transition-colors">
+                        {/* <Link href="/leaderboard" className="hover:text-[#ca6e3f] transition-colors">
                             Leaderboard
                         </Link>
                         <Link href="/about-us" className="hover:text-[#ca6e3f] transition-colors">
                             About us
-                        </Link>
+                        </Link> */}
                         <Link
                             href="/quiz"
                             className="bg-[#ca6e3f] hover:bg-[#ca6d41] px-4 py-2 rounded-lg font-semibold transition-colors"
@@ -75,7 +75,7 @@ export function Navbar() {
                             >
                                 Take Quiz
                             </Link>
-                            <Link
+                            {/* <Link
                                 href="/leaderboard"
                                 className="block px-3 py-2 hover:text-[#ca6e3f] transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
@@ -88,7 +88,7 @@ export function Navbar() {
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 About us
-                            </Link>
+                            </Link> */}
                             <Link
                                 href="/quiz"
                                 className="block mx-3 mt-4 bg-[#ca6e3f] hover:bg-[#ca6d41] px-4 py-2 rounded-lg font-semibold text-center transition-colors"

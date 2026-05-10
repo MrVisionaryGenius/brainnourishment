@@ -8,22 +8,18 @@ export function ProgressBar({ progress, currentQuestion, totalQuestions }: Progr
   return (
     <div className="mb-8">
       <div className="flex justify-between items-center mb-2">
-        <span className="text-sm font-medium text-[#1b201c] opacity-80">Progress</span>
-        <span className="text-sm font-medium text-[#1b201c] opacity-80">{Math.round(progress)}% Complete</span>
+        <span className="text-xs font-medium text-gray-500 uppercase tracking-widest">Attention Audit</span>
+        <span className="text-xs font-medium text-[#f97316]">{Math.round(progress)}% complete</span>
       </div>
-
-      <div className="w-full bg-[#f1eada] rounded-full h-3 overflow-hidden border border-[#ca6e3f]/20">
+      <div className="w-full bg-[#1a1f1b] rounded-full h-1.5 overflow-hidden border border-white/5">
         <div
-          className="bg-gradient-to-r from-[#ca6e3f] to-[#ca6d41] h-3 rounded-full transition-all duration-500 ease-out"
+          className="bg-[#f97316] h-1.5 rounded-full transition-all duration-500 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
-
       <div className="flex justify-between items-center mt-2">
-        <span className="text-xs text-[#1b201c] opacity-70">
-          Question {currentQuestion} of {totalQuestions}
-        </span>
-        <span className="text-xs text-[#1b201c] opacity-70">{totalQuestions - currentQuestion} remaining</span>
+        <span className="text-xs text-gray-600">Question {currentQuestion} of {totalQuestions}</span>
+        <span className="text-xs text-gray-600">{totalQuestions - currentQuestion} remaining</span>
       </div>
     </div>
   )
