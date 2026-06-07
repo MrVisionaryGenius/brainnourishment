@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useCallback } from 'react';
 
-const ADMIN_SECRET =
-    typeof window !== 'undefined'
-        ? localStorage.getItem('admin_secret') ?? ''
-        : '';
+// const ADMIN_SECRET =
+//     typeof window !== 'undefined'
+//         ? localStorage.getItem('admin_secret') ?? ''
+//         : '';
 
 interface Stats {
     state: {

@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface HeroSectionProps {
-  age: number
   stats: {
     daysPerYear: number
     yearsLost: number
@@ -17,13 +16,10 @@ interface HeroSectionProps {
     workoutsPerYear: number
     yearsWithPhone: number
   }
-  onBuyClick: () => void
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
-  age,
   stats,
-  onBuyClick,
 }) => {
   const { ref: heroRef, isVisible: heroVisible } =
     useScrollAnimation<HTMLElement>(0.1)

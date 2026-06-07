@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.brainnourishment.club"),
   title: "The AI Operator — Are You Using AI to Its Full Potential?",
   description:
     "Take our free 2-minute assessment and find out exactly where you're leaving time and money on the table. Then get practical AI tools, prompts & automations in your inbox every Tuesday & Thursday.",

@@ -1,26 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-// import FloatingActionButton from "./components/floating-action-button"
 import HeroSection from "./components/hero-section"
-// import ShockSection from "./components/shock-section"
-// import OfferSection from "./components/offer-section"
-// import FinalCtaSection from "./components/final-cta-section"
-// import LastChanceSection from "./components/last-chance-section"
-// import Footer from "./components/footer"
+
 import { Navbar } from "./components/navbar"
-// import AgeInputModal from "./components/age-input"
-// import ExitModal from "./components/exit-modal"
-// import TestimonialCarousel from "./components/testimonial-section"
-// import SocialProofSection from "./components/social-proof-section"
-// import FourteenDayChallenge from "./components/module-section"
 
 const App = () => {
   const [age, setAge] = useState<number | null>(null)
-  // const [isExitModalOpen, setIsExitModalOpen] = useState(false)
-  const [isModalOpen] = useState(false)
 
-  const WHOP_URL = "https://whop.com/checkout/plan_W5EqYxoadkQdR?d2c=true"
+  // const WHOP_URL = "https://whop.com/checkout/plan_W5EqYxoadkQdR?d2c=true"
 
   useEffect(() => {
     const storedAge = sessionStorage.getItem("userAge")
@@ -29,36 +17,6 @@ const App = () => {
     }
   }, [])
 
-  useEffect(() => {
-    if (age === null) {
-      const timer = setTimeout(() => {}, 2000)
-      return () => clearTimeout(timer)
-    }
-  }, [age])
-
-  // useEffect(() => {
-  //   if (age === null) return
-  //   const timer = setTimeout(() => {
-  //     if (!isModalOpen) setIsExitModalOpen(true)
-  //   }, 25000)
-  //   return () => clearTimeout(timer)
-  // }, [isModalOpen, age])
-
-  // const handleAgeSubmit = (userAge: number) => {
-  //   setAge(userAge)
-  //   sessionStorage.setItem("userAge", userAge.toString())
-  // }
-
-  const handleBuyClick = () => {
-    // window.gtag?.('event', 'click', {
-    //   event_category: 'Purchase',
-    //   event_label: 'WHOP Checkout',
-    //   value: 1
-    // })
-    setTimeout(() => {
-      window.location.href = WHOP_URL
-    }, 100)
-  }
 
   const calculateLifeImpact = (hoursDaily: number, userAge: number) => {
     const lifeExpectancy = 78
@@ -107,9 +65,7 @@ const App = () => {
       {/* <FloatingActionButton onBuyClick={handleBuyClick} /> */}
 
       <HeroSection
-        age={displayAge}
         stats={stats}
-        onBuyClick={handleBuyClick}
       />
 
       {/* <FourteenDayChallenge /> */}

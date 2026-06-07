@@ -209,7 +209,7 @@ export async function incrementAttempt(id: string): Promise<void> {
 export async function getDashboardStats() {
   const supabase = getServerClient();
 
-  const [stateResult, pending, failed, total] = await Promise.all([
+  const [stateResult, pending, failed] = await Promise.all([
     supabase.from("newsletter_state").select("*").eq("id", 1).single(),
     supabase
       .from("newsletter_emails")
