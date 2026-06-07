@@ -1,16 +1,27 @@
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 import { NextRequest, NextResponse } from "next/server";
 import {
   getState,
   updateState,
   getNextPendingEmail,
-  deleteEmailAfterSubscribe, // ← changed
+  deleteEmailAfterSubscribe,
   incrementAttempt,
 } from "@/lib/newsletter/supabase";
 import { subscribeToSubstack } from "@/lib/newsletter/substack";
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
+  // Accept secret via query param (works with cron-job.org free plan)
+  // OR via Authorization header (works with Vercel cron)
+  const { searchParams } = new URL(request.url);
+  const querySecret = searchParams.get("secret");
   const authHeader = request.headers.get("authorization");
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+
+  const isValidQuery = querySecret === process.env.CRON_SECRET;
+  const isValidHeader = authHeader === `Bearer ${process.env.CRON_SECRET}`;
+
+  if (!isValidQuery && !isValidHeader) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -30,7 +41,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const emailRecord = await getNextPendingEmail();
 
     if (!emailRecord) {
-      // DB is empty — all emails processed
       await updateState({ status: "completed" });
       console.log(`[${timestamp}] DB is empty — all done`);
       return NextResponse.json({ completed: true, message: "All done!" });
@@ -41,19 +51,16 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const result = await subscribeToSubstack(emailRecord.email);
 
     if (result.success) {
-      // ✅ Success → DELETE from DB immediately
       await deleteEmailAfterSubscribe(emailRecord.id);
       await updateState({
         processed_count: state.processed_count + 1,
         subscribed_count: state.subscribed_count + 1,
         last_processed_at: new Date().toISOString(),
       });
-
       console.log(
         `[${timestamp}] ✅ Subscribed & deleted: ${emailRecord.email}`,
       );
     } else {
-      // ❌ Failed — rate limit → pause
       if (result.statusCode === 429) {
         await incrementAttempt(emailRecord.id);
         await updateState({ status: "paused" });
@@ -64,13 +71,11 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
         });
       }
 
-      // ❌ Failed — increment attempt (deleted auto on 3rd fail by incrementAttempt)
       await incrementAttempt(emailRecord.id);
       await updateState({
         processed_count: state.processed_count + 1,
         last_processed_at: new Date().toISOString(),
       });
-
       console.error(
         `[${timestamp}] ❌ Failed: ${emailRecord.email} — ${result.message}`,
       );
