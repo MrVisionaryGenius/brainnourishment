@@ -16,11 +16,7 @@
     "framer-motion": "^12.23.12",
     "html2canvas": "^1.4.1",
     "lucide-react": "^0.540.0",
-<<<<<<< HEAD
     "next": "16.2.7",
-=======
-    "next": "15.4.10",
->>>>>>> b4a54f31b6a582daba5c9e091148f9b50a9c8dba
     "papaparse": "^5.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
