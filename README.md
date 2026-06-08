@@ -1,4 +1,4 @@
-# Brain Nourishment Landing Page
+# Brain Nourishment Landing Page:
 
 A comprehensive landing page and assessment platform designed to help users understand and improve their digital wellness habits, specifically focusing on phone addiction and screen time management.
 
